@@ -41,9 +41,9 @@ export default function Emotion() {
 
       {sel !== null && sel >= 3 && (
         <div className="banner fort" role="alert" style={{ marginTop: 16 }}>
-          <strong>{t('Ce que tu ressens compte, et on peut t’aider maintenant.')}</strong>
+          <strong>{t('Ce que tu ressens, c’est important. On t’aide, là, maintenant.')}</strong>
           <p style={{ margin: '6px 0' }}>
-            {t('Tu n’as pas à garder ça pour toi. Parler à quelqu’un soulage, vraiment.')}
+            {t('Garde pas ça pour toi. Parler, ça soulage pour de vrai.')}
           </p>
           <div className="stack">
             <a className="btn primary" href="tel:3018">{t('Appeler le 3018')}</a>

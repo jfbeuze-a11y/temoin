@@ -46,7 +46,7 @@ export default function Diagnostic() {
 
         <h2>{t('Et maintenant ?')}</h2>
         <div className="stack">
-          <button className="btn primary" onClick={() => nav('/ado/proteger/coffre')}>{t('Mettre mes preuves à l’abri')}</button>
+          <button className="btn primary" onClick={() => nav('/ado/proteger/coffre')}>{t('Mettre mes preuves au chaud')}</button>
           <button className="btn" onClick={() => nav('/ado/accompagne/adulte')}>{t('En parler à quelqu’un')}</button>
           <button className="btn ghost" onClick={() => nav('/ado/proteger/recours')}>{t('Voir les numéros d’aide')}</button>
         </div>

@@ -11,13 +11,13 @@ export default function AdoHome() {
       <Header title="Mon espace" />
       <p className="eyebrow">{t('Espace ado privé')}</p>
       <h1>{t('On commence par quoi ?')}</h1>
-      <p className="lead">{t('Choisis ce qu’il te faut, là, maintenant. Ou jette juste un œil.')}</p>
+      <p className="lead">{t('Dis-moi ce qu’il te faut, là, maintenant. Ou mate vite fait, tranquille.')}</p>
 
       {/* Raccourci d'urgence : garder les preuves et appeler à l'aide en un geste */}
       <div className="card" style={{ borderColor: 'color-mix(in srgb, var(--primary) 35%, var(--line))' }}>
-        <p className="eyebrow" style={{ marginBottom: 10 }}>{t('Besoin d’agir vite ?')}</p>
+        <p className="eyebrow" style={{ marginBottom: 10 }}>{t('Faut faire vite ?')}</p>
         <button className="btn primary" onClick={() => nav('/ado/proteger/coffre')}>
-          <Icon name="lock" size={20} /> {t('Mettre mes preuves à l’abri')}
+          <Icon name="lock" size={20} /> {t('Mettre mes preuves au chaud')}
         </button>
         <div className="btn-row" style={{ marginTop: 10 }}>
           <a className="btn" href="tel:3018"><Icon name="phone" size={18} /> 3018</a>

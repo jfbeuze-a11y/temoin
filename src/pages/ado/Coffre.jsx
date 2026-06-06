@@ -70,7 +70,7 @@ function CoffreInner() {
 
       {loading && <p className="muted">{t('Lecture du coffre-fort…')}</p>}
       {!loading && items.length === 0 && (
-        <p className="muted">{t('Ton coffre-fort est vide. Ajoute une capture d’écran, un message ou un lien.')}</p>
+        <p className="muted">{t('Ton coffre est vide. Balance une capture, un message ou un lien.')}</p>
       )}
 
       {items.map((p) => (

@@ -20,6 +20,18 @@ const ES = {
 
   // Ton décontracté + KORI
   'Je suis Kori': 'Soy Kori',
+  'Salut, moi c’est Kori': 'Hola, soy Kori',
+  'Le cyberharcèlement ? T’inquiète, je gère avec toi.': '¿El ciberacoso? Tranqui, lo llevamos juntos.',
+  'Moi c’est Kori, ton allié. Je t’aide à comprendre ce qui se passe, à garder tes preuves au chaud et à trouver de l’aide. Zéro compte, rien ne sort de ton tel — promis.':
+    'Soy Kori, tu aliado. Te ayudo a entender lo que pasa, a guardar tus pruebas a buen recaudo y a encontrar ayuda. Cero cuenta, nada sale de tu móvil — palabra.',
+  'Dis-moi ce qu’il te faut, là, maintenant. Ou mate vite fait, tranquille.':
+    'Dime qué necesitas, aquí y ahora. O echa un vistazo rápido, tranqui.',
+  'Faut faire vite ?': '¿Hay que ir rápido?',
+  'Mettre mes preuves au chaud': 'Poner mis pruebas a buen recaudo',
+  'Ce que tu ressens, c’est important. On t’aide, là, maintenant.': 'Lo que sientes es importante. Te ayudamos, aquí y ahora.',
+  'Garde pas ça pour toi. Parler, ça soulage pour de vrai.': 'No te lo guardes. Hablar alivia de verdad.',
+  'Ton coffre est vide. Balance une capture, un message ou un lien.':
+    'Tu caja está vacía. Suelta una captura, un mensaje o un enlace.',
   'Face au cyberharcèlement, je suis là pour toi.': 'Frente al ciberacoso, estoy contigo.',
   'Moi c’est Kori, ton compagnon de protection. Je t’aide à capter ce qui t’arrive, à mettre tes preuves à l’abri et à trouver de l’aide. Pas besoin de compte, rien ne sort de ton tel.':
     'Soy Kori, tu compañero de protección. Te ayudo a pillar lo que te pasa, a poner tus pruebas a salvo y a encontrar ayuda. Sin cuenta, nada sale de tu móvil.',
