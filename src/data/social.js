@@ -57,6 +57,39 @@ const fr = {
         { titre: 'Infos du profil', texte: 'Masque ton numéro, ton e-mail, ton école et ta date de naissance au public.' },
         { titre: 'Connexions actives', texte: 'Sécurité → « Où vous êtes connecté » → déconnecte les sessions que tu ne reconnais pas.' }
       ]
+    },
+    {
+      id: 'twitter',
+      nom: 'X (Twitter)',
+      conseils: [
+        { titre: 'Compte protégé', texte: 'Réglages → Confidentialité → « Protéger tes posts » : seuls tes abonnés validés voient ce que tu publies.' },
+        { titre: 'Double authentification', texte: 'Réglages → Sécurité → Authentification à deux facteurs (appli d’authentification de préférence).' },
+        { titre: 'Messages privés (DM)', texte: 'Confidentialité → Messages → limite les DM aux personnes que tu suis.' },
+        { titre: 'Être retrouvé', texte: 'Désactive la recherche de ton compte via ton e-mail ou ton numéro.' },
+        { titre: 'Identifications', texte: 'Bloque ou limite qui peut t’identifier sur des photos.' }
+      ]
+    },
+    {
+      id: 'whatsapp',
+      nom: 'WhatsApp',
+      conseils: [
+        { titre: 'Vérification en deux étapes', texte: 'Réglages → Compte → Vérification en deux étapes : ajoute un code PIN.' },
+        { titre: 'Photo, infos, « vu à »', texte: 'Confidentialité → limite « photo de profil », « infos » et « vu à » à « Mes contacts ».' },
+        { titre: 'Ajout aux groupes', texte: 'Confidentialité → Groupes → « Mes contacts » : empêche les inconnus de t’ajouter.' },
+        { titre: 'Bloquer / signaler', texte: 'Dans le profil du contact, tu peux bloquer et signaler en deux gestes.' },
+        { titre: 'Messages éphémères', texte: 'Active les messages éphémères pour les conversations sensibles.' }
+      ]
+    },
+    {
+      id: 'discord',
+      nom: 'Discord',
+      conseils: [
+        { titre: 'Double authentification', texte: 'Paramètres → Mon compte → active l’authentification à deux facteurs (2FA).' },
+        { titre: 'Messages privés', texte: 'Paramètres → Confidentialité → coupe les MP des membres de serveurs que tu ne connais pas.' },
+        { titre: 'Demandes d’amis', texte: 'Limite qui peut t’ajouter en ami (amis d’amis / membres de serveurs).' },
+        { titre: 'Te retrouver', texte: 'Désactive la découverte de ton compte via ton e-mail ou ton numéro.' },
+        { titre: 'Serveurs publics', texte: 'Sur un serveur public, ne donne jamais ton vrai nom, ton adresse ni ton établissement.' }
+      ]
     }
   ],
   rappel: 'Ces réglages ne te rendent pas « parano » : ils te donnent le contrôle. Tu peux les revoir à tout moment.'
@@ -117,6 +150,39 @@ const es = {
         { titre: 'Quién puede encontrarte / agregarte', texte: 'Privacidad → limita quién puede enviarte solicitudes y encontrarte por tu teléfono o correo.' },
         { titre: 'Datos del perfil', texte: 'Oculta al público tu teléfono, correo, escuela y fecha de nacimiento.' },
         { titre: 'Sesiones activas', texte: 'Seguridad → «Dónde iniciaste sesión» → cierra las sesiones que no reconozcas.' }
+      ]
+    },
+    {
+      id: 'twitter',
+      nom: 'X (Twitter)',
+      conseils: [
+        { titre: 'Cuenta protegida', texte: 'Ajustes → Privacidad → «Proteger tus posts»: solo tus seguidores aceptados ven lo que publicas.' },
+        { titre: 'Verificación en dos pasos', texte: 'Ajustes → Seguridad → Autenticación en dos pasos (mejor con una app de autenticación).' },
+        { titre: 'Mensajes privados (DM)', texte: 'Privacidad → Mensajes → limita los DM a las personas que sigues.' },
+        { titre: 'Que te encuentren', texte: 'Desactiva que puedan buscar tu cuenta por tu correo o tu teléfono.' },
+        { titre: 'Etiquetas', texte: 'Bloquea o limita quién puede etiquetarte en fotos.' }
+      ]
+    },
+    {
+      id: 'whatsapp',
+      nom: 'WhatsApp',
+      conseils: [
+        { titre: 'Verificación en dos pasos', texte: 'Ajustes → Cuenta → Verificación en dos pasos: añade un PIN.' },
+        { titre: 'Foto, info, «últ. vez»', texte: 'Privacidad → limita «foto de perfil», «info» y «últ. vez» a «Mis contactos».' },
+        { titre: 'Añadir a grupos', texte: 'Privacidad → Grupos → «Mis contactos»: evita que desconocidos te añadan.' },
+        { titre: 'Bloquear / denunciar', texte: 'En el perfil del contacto puedes bloquear y denunciar en dos gestos.' },
+        { titre: 'Mensajes temporales', texte: 'Activa los mensajes temporales para las conversaciones sensibles.' }
+      ]
+    },
+    {
+      id: 'discord',
+      nom: 'Discord',
+      conseils: [
+        { titre: 'Verificación en dos pasos', texte: 'Ajustes → Mi cuenta → activa la autenticación en dos pasos (2FA).' },
+        { titre: 'Mensajes privados', texte: 'Ajustes → Privacidad → desactiva los MD de miembros de servidores que no conoces.' },
+        { titre: 'Solicitudes de amistad', texte: 'Limita quién puede agregarte (amigos de amigos / miembros de servidores).' },
+        { titre: 'Que te encuentren', texte: 'Desactiva que encuentren tu cuenta por tu correo o tu teléfono.' },
+        { titre: 'Servidores públicos', texte: 'En un servidor público, nunca des tu nombre real, tu dirección ni tu centro.' }
       ]
     }
   ],
