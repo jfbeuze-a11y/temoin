@@ -21,7 +21,7 @@ const fr = [
     bloquer: ['Appuie sur le nom de la personne pour ouvrir son profil.', 'Touche les trois points « … ».', 'Choisis « Bloquer ».'],
     signaler: ['Appuie longuement sur le Snap ou le message.', 'Touche « Signaler ».', 'Indique « Harcèlement ou intimidation ».'],
     retrait: ['Sur Snapchat les contenus s’effacent vite : capture immédiatement (l’autre peut être notifié de la capture).', 'Signale au support Snapchat via les réglages d’aide.'],
-    rappel: 'Les contenus s’effacent vite : screene direct — mais l’autre peut être prévenu de la capture.'
+    rappel: 'Les contenus s’effacent vite : screene direct, mais l’autre peut être prévenu de la capture.'
   },
   {
     id: 'discord', nom: 'Discord', couleur: '#5865F2',
@@ -66,7 +66,7 @@ const es = [
     bloquer: ['Pulsa el nombre de la persona para abrir su perfil.', 'Toca los tres puntos «…».', 'Elige «Bloquear».'],
     signaler: ['Mantén pulsado el Snap o el mensaje.', 'Toca «Denunciar».', 'Indica «Acoso o intimidación».'],
     retrait: ['En Snapchat los contenidos se borran rápido: captura de inmediato (pueden avisar a la otra persona de la captura).', 'Denuncia al soporte de Snapchat desde los ajustes de ayuda.'],
-    rappel: 'Los contenidos se borran rápido: captura ya — pero pueden avisar a la otra persona.'
+    rappel: 'Los contenidos se borran rápido: captura ya, pero pueden avisar a la otra persona.'
   },
   {
     id: 'discord', nom: 'Discord', couleur: '#5865F2',

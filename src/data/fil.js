@@ -80,7 +80,7 @@ const fr = {
       end: {
         tone: 'good',
         titre: 'Tu as fait basculer l’histoire',
-        texte: 'Grâce à un message, un signalement et un adulte prévenu, Léa n’est plus seule et la vidéo a été retirée. Ce qui change tout, c’est presque toujours un pair — toi.'
+        texte: 'Grâce à un message, un signalement et un adulte prévenu, Léa n’est plus seule et la vidéo a été retirée. Ce qui change tout, c’est presque toujours un pair : toi.'
       }
     },
     end_meh: {
@@ -115,7 +115,7 @@ const fr = {
     },
     v_supprime: {
       text: 'Tu supprimes les messages et tu bloques. Sur le moment ça soulage… mais t’as plus aucune preuve si ça continue.',
-      kori: 'Bloquer, oui — mais APRÈS avoir screené. Les preuves, c’est ce qui aide à faire arrêter.',
+      kori: 'Bloquer, oui, mais APRÈS avoir screené. Les preuves, c’est ce qui aide à faire arrêter.',
       choices: [{ label: 'Recommencer autrement', to: 'v_preuve' }]
     },
     v_preuve: {
@@ -166,7 +166,7 @@ const fr = {
     },
     a_stop: {
       text: 'Tu dis : « Non, on arrête, c’est pas drôle. » Un blanc. Puis un autre approuve. La photo n’est pas postée.',
-      kori: 'Tu viens d’éviter une catastrophe. Faut du courage pour ça — respect.',
+      kori: 'Tu viens d’éviter une catastrophe. Faut du courage pour ça. Respect.',
       choices: [{ label: 'Voir comment ça finit', to: 'a_end_good' }]
     },
     a_repare: {
@@ -178,14 +178,14 @@ const fr = {
       end: {
         tone: 'good',
         titre: 'Tu as stoppé l’engrenage',
-        texte: 'Dire stop, c’est le geste le plus fort. Souvent, le groupe n’attendait que ça — quelqu’un d’assez courageux pour le faire.'
+        texte: 'Dire stop, c’est le geste le plus fort. Souvent, le groupe n’attendait que ça : quelqu’un d’assez courageux pour le faire.'
       }
     },
     a_end_repair: {
       end: {
         tone: 'meh',
         titre: 'Il n’est jamais trop tard pour réparer',
-        texte: 'Le mal est fait, mais reconnaître, s’excuser et faire retirer le contenu, ça change les choses — pour l’autre et pour toi. Le harcèlement est un délit ; en sortir, c’est possible.'
+        texte: 'Le mal est fait, mais reconnaître, s’excuser et faire retirer le contenu, ça change les choses, pour l’autre et pour toi. Le harcèlement est un délit ; en sortir, c’est possible.'
       }
     }
   }
@@ -302,7 +302,7 @@ const es = {
     },
     v_supprime: {
       text: 'Borras los mensajes y bloqueas. En el momento alivia… pero te quedas sin pruebas si sigue.',
-      kori: 'Bloquear, sí — pero DESPUÉS de capturar. Las pruebas son lo que ayuda a que pare.',
+      kori: 'Bloquear, sí, pero DESPUÉS de capturar. Las pruebas son lo que ayuda a que pare.',
       choices: [{ label: 'Empezar de otra forma', to: 'v_preuve' }]
     },
     v_preuve: {
@@ -352,7 +352,7 @@ const es = {
     },
     a_stop: {
       text: 'Dices: «No, paramos, no tiene gracia.» Un silencio. Luego otro te apoya. La foto no se publica.',
-      kori: 'Acabas de evitar una catástrofe. Hace falta valor — respeto.',
+      kori: 'Acabas de evitar una catástrofe. Hace falta valor. Respeto.',
       choices: [{ label: 'Ver cómo acaba', to: 'a_end_good' }]
     },
     a_repare: {
@@ -371,7 +371,7 @@ const es = {
       end: {
         tone: 'meh',
         titre: 'Nunca es tarde para reparar',
-        texte: 'El daño está hecho, pero reconocer, disculparse y retirar el contenido cambia las cosas — para el otro y para ti. El acoso es un delito; salir de él es posible.'
+        texte: 'El daño está hecho, pero reconocer, disculparse y retirar el contenido cambia las cosas, para el otro y para ti. El acoso es un delito; salir de él es posible.'
       }
     }
   }

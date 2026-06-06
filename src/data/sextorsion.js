@@ -6,7 +6,7 @@ const fr = {
     'On te menace de diffuser une photo ou une vidéo intime si tu ne paies pas ou n’envoies pas plus ? C’est de la sextorsion. Respire : t’es pas en faute, c’est un délit, et on va t’aider à t’en sortir.',
   aFaire: [
     'Arrête de répondre. N’envoie rien, ne paie rien.',
-    'Screene les preuves : le pseudo, le profil, les messages, les liens — mets-les au chaud dans le coffre.',
+    'Screene les preuves : le pseudo, le profil, les messages, les liens, et mets-les au chaud dans le coffre.',
     'Bloque la personne, une fois les preuves prises.',
     'Préviens un adulte de confiance. T’as pas à gérer ça tout seul.',
     'Appelle le 3018 : ils aident au retrait en urgence, même le soir.',
@@ -27,7 +27,7 @@ const es = {
     '¿Te amenazan con difundir una foto o un vídeo íntimo si no pagas o no envías más? Eso es sextorsión. Respira: no es culpa tuya, es un delito, y vamos a ayudarte a salir de esto.',
   aFaire: [
     'Deja de responder. No envíes nada, no pagues nada.',
-    'Captura las pruebas: el usuario, el perfil, los mensajes, los enlaces — guárdalos a salvo en la caja.',
+    'Captura las pruebas: el usuario, el perfil, los mensajes, los enlaces, y guárdalos a salvo en la caja.',
     'Bloquea a la persona, una vez tengas las pruebas.',
     'Avisa a un adulto de confianza. No tienes que gestionar esto tú solo.',
     'Llama al 3018: ayudan a retirar el contenido con urgencia, incluso de noche.',

@@ -36,8 +36,8 @@ const ES = {
   'Besoin d’aide tout de suite ? Le 3018, ou le 17 en cas de danger.':
     '¿Necesitas ayuda ya? El 3018, o el 17 en caso de peligro.',
   'Le cyberharcèlement ? T’inquiète, je gère avec toi.': '¿El ciberacoso? Tranqui, lo llevamos juntos.',
-  'Moi c’est Kori, ton allié. Je t’aide à comprendre ce qui se passe, à garder tes preuves au chaud et à trouver de l’aide. Zéro compte, rien ne sort de ton tel — promis.':
-    'Soy Kori, tu aliado. Te ayudo a entender lo que pasa, a guardar tus pruebas a buen recaudo y a encontrar ayuda. Cero cuenta, nada sale de tu móvil — palabra.',
+  'Moi c’est Kori, ton allié. Je t’aide à comprendre ce qui se passe, à garder tes preuves au chaud et à trouver de l’aide. Zéro compte, rien ne sort de ton tel. Promis.':
+    'Soy Kori, tu aliado. Te ayudo a entender lo que pasa, a guardar tus pruebas a buen recaudo y a encontrar ayuda. Cero cuenta, nada sale de tu móvil. Palabra.',
   'Dis-moi ce qu’il te faut, là, maintenant. Ou mate vite fait, tranquille.':
     'Dime qué necesitas, aquí y ahora. O echa un vistazo rápido, tranqui.',
   'Faut faire vite ?': '¿Hay que ir rápido?',

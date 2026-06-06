@@ -15,7 +15,7 @@ export default function Home() {
         <h1>{t('Le cyberharcèlement ? T’inquiète, je gère avec toi.')}</h1>
         <p className="lead">
           {t(
-            'Moi c’est Kori, ton allié. Je t’aide à comprendre ce qui se passe, à garder tes preuves au chaud et à trouver de l’aide. Zéro compte, rien ne sort de ton tel — promis.'
+            'Moi c’est Kori, ton allié. Je t’aide à comprendre ce qui se passe, à garder tes preuves au chaud et à trouver de l’aide. Zéro compte, rien ne sort de ton tel. Promis.'
           )}
         </p>
       </div>
