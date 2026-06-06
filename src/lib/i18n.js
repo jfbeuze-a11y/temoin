@@ -24,8 +24,8 @@ const ES = {
   Passer: 'Saltar',
   'Suivant': 'Siguiente',
   'C’est parti': '¡Vamos!',
-  'Ton compagnon de protection contre le cyberharcèlement. Je reste avec toi, discret.':
-    'Tu compañero de protección contra el ciberacoso. Me quedo contigo, discreto.',
+  'Ton allié, discret, toujours dans ta poche. Quand ça coince, je suis là.':
+    'Tu aliado, discreto, siempre en tu bolsillo. Cuando algo se tuerce, estoy aquí.',
   'Je t’aide, concrètement': 'Te ayudo, en concreto',
   'Comprendre ce qui t’arrive': 'Entender lo que te pasa',
   'Mettre tes preuves au chaud': 'Poner tus pruebas a salvo',

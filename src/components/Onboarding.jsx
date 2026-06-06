@@ -31,7 +31,7 @@ export default function Onboarding() {
         {step === 0 && (
           <>
             <h1>{t('Salut, moi c’est Kori')}</h1>
-            <p className="lead">{t('Ton compagnon de protection contre le cyberharcèlement. Je reste avec toi, discret.')}</p>
+            <p className="lead">{t('Ton allié, discret, toujours dans ta poche. Quand ça coince, je suis là.')}</p>
           </>
         )}
 
