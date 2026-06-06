@@ -1,14 +1,17 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Header } from '../components/ui.jsx'
 import { useApp } from '../context/AppContext.jsx'
 import { langs, useT } from '../lib/i18n.js'
 import { wipeAdoData } from '../lib/db.js'
 
+const SPACE = import.meta.env.VITE_SPACE
+
 // Socle transverse (M6) : compte, mode discret, thème, langue, accessibilité, effacement.
 export default function Settings() {
-  const { theme, setTheme, lang, setLang, discreet, setDiscreet, lockVault, setHasVault, hasAccount, logoutAccount, removeAccount } = useApp()
+  const { theme, setTheme, lang, setLang, discreet, setDiscreet, lockVault, setHasVault, hasAccount, logoutAccount, removeAccount, resetOnboarding } = useApp()
   const t = useT()
+  const nav = useNavigate()
   const [wiped, setWiped] = useState(false)
 
   function handleRemoveAccount() {
@@ -86,6 +89,15 @@ export default function Settings() {
           ))}
         </select>
       </div>
+
+      {SPACE !== 'parent' && (
+        <>
+          <h2>{t('Découverte')}</h2>
+          <div className="card">
+            <button className="btn" onClick={() => { resetOnboarding(); nav('/ado') }}>{t('Revoir l’intro de KORI')}</button>
+          </div>
+        </>
+      )}
 
       <h2>{t('Accessibilité')}</h2>
       <div className="card">

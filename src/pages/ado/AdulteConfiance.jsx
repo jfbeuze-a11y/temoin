@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Header } from '../../components/ui.jsx'
 import { getContent } from '../../data/content.js'
 import { useApp } from '../../context/AppContext.jsx'
@@ -30,7 +31,7 @@ export default function AdulteConfiance() {
         </div>
       ))}
 
-      <a className="btn primary" href="/ado/accompagne/recit">{t('Préparer un récit à montrer')}</a>
+      <Link className="btn primary" to="/ado/accompagne/recit">{t('Préparer un récit à montrer')}</Link>
     </>
   )
 }

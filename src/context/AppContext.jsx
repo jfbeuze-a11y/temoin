@@ -65,6 +65,10 @@ export function AppProvider({ children }) {
     setOnboardedState(true)
     savePref('onboarded', true)
   }
+  const resetOnboarding = () => {
+    setOnboardedState(false)
+    savePref('onboarded', false)
+  }
 
   // Crée le coffre-fort : dérive une clé du code, stocke sel + canary chiffré (jamais le code).
   const createVault = useCallback(async (passcode) => {
@@ -124,6 +128,7 @@ export function AppProvider({ children }) {
     setDiscreet: updateDiscreet,
     onboarded,
     completeOnboarding,
+    resetOnboarding,
     adoKey,
     hasVault,
     createVault,

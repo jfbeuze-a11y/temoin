@@ -370,6 +370,8 @@ const ES = {
     'El tema suave es más agradable para consultar de noche.',
   Langue: 'Idioma',
   Accessibilité: 'Accesibilidad',
+  'Découverte': 'Descubrir',
+  'Revoir l’intro de KORI': 'Volver a ver la intro de Kori',
   'Témoin vise la conformité RGAA 4.1 / WCAG 2.1 AA : contrastes renforcés, cibles tactiles larges, navigation au lecteur d’écran, respect de la réduction d’animations de ton système.':
     'Témoin busca cumplir RGAA 4.1 / WCAG 2.1 AA: contrastes reforzados, zonas táctiles amplias, navegación con lector de pantalla y respeto de la reducción de animaciones del sistema.',
   'Mes données': 'Mis datos',
