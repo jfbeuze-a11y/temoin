@@ -8,6 +8,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   base: process.env.VITE_BASE || '/',
   build: { outDir: process.env.VITE_OUTDIR || 'dist' },
+  // Injecté de façon déterministe (lu côté Node, pas via import.meta.env).
+  define: { __SPACE__: JSON.stringify(process.env.VITE_SPACE || '') },
   plugins: [
     react(),
     VitePWA({

@@ -84,8 +84,9 @@ function OnboardingGate({ children }) {
   return <Onboarding />
 }
 
-// Espace cible du build : 'ado' | 'parent' | undefined (app complète avec page de choix).
-const SPACE = import.meta.env.VITE_SPACE
+// Espace cible du build : 'ado' | 'parent' | '' (app complète avec page de choix).
+// __SPACE__ est injecté au build par Vite (define) à partir de VITE_SPACE.
+const SPACE = typeof __SPACE__ !== 'undefined' ? __SPACE__ : ''
 
 const adoRoutes = (
   <Route path="/ado" element={<AdoLayout />}>

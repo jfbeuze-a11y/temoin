@@ -5,7 +5,7 @@ import { useApp } from '../context/AppContext.jsx'
 import { langs, useT } from '../lib/i18n.js'
 import { wipeAdoData } from '../lib/db.js'
 
-const SPACE = import.meta.env.VITE_SPACE
+const SPACE = typeof __SPACE__ !== 'undefined' ? __SPACE__ : ''
 
 // Socle transverse (M6) : compte, mode discret, thème, langue, accessibilité, effacement.
 export default function Settings() {
