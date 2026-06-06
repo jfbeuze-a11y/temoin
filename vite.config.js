@@ -14,6 +14,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      // Temporairement auto-destructeur : supprime tout ancien service worker et
+      // ses caches pour que chaque mise à jour s'affiche immédiatement (offline OFF
+      // pendant la phase d'itération ; à réactiver une fois l'app stabilisée).
+      selfDestroying: true,
       includeAssets: ['favicon.svg'],
       manifest: {
         name: 'Notes', // nom neutre par défaut (mode discret, EF-X01)
