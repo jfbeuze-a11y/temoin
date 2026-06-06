@@ -31,7 +31,7 @@ export default function AdoHome() {
       <LinkCard to="/ado/accompagne" icon="lifebuoy" title="Me faire aider" desc="À qui en parler, ressources, journal." />
       <LinkCard to="/ado/temoin" icon="eye" title="Témoin" desc="J’ai vu quelqu’un se faire harceler." />
       <LinkCard to="/compte" icon="lock" title="Sécuriser mon accès" desc="Mot de passe + double authentification (MFA). Optionnel." accent="amber" />
-      <LinkCard to="/reglages" icon="sliders" title="Réglages" desc="Discrétion, thème, langue, compte." />
+      <LinkCard to="/reglages" icon="sliders" title="Réglages" desc="Discrétion, thème, langue, compte." accent="slate" />
     </>
   )
 }

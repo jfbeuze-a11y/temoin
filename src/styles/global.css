@@ -355,6 +355,16 @@ strong {
   background: var(--accent);
   border-color: var(--accent);
 }
+/* Réglages : bleu ardoise */
+.card.tappable.accent-slate {
+  background: color-mix(in srgb, #6f86a6 10%, var(--surface));
+  border-color: color-mix(in srgb, #6f86a6 45%, var(--line));
+}
+.card.tappable.accent-slate .chip {
+  color: #fff;
+  background: #6f86a6;
+  border-color: #6f86a6;
+}
 
 /* Icône en pastille tintée */
 .chip {
