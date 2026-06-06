@@ -157,6 +157,13 @@ const P = {
       <circle cx="19" cy="14" r="1.8" />
     </>
   ),
+  'shield-alert': (
+    <>
+      <path d="M12 21s7.5-3.8 7.5-9.4V5.5L12 2.8 4.5 5.5v6.1C4.5 17.2 12 21 12 21Z" />
+      <path d="M12 8v4.4" />
+      <path d="M12 15.6h.01" strokeWidth="2.3" />
+    </>
+  ),
   globe: (
     <>
       <circle cx="12" cy="12" r="9" />

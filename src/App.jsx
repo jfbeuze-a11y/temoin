@@ -19,6 +19,7 @@ import Coffre from './pages/ado/Coffre.jsx'
 import CoffreAjouter from './pages/ado/CoffreAjouter.jsx'
 import Plateformes from './pages/ado/Plateformes.jsx'
 import SocialProtection from './pages/ado/SocialProtection.jsx'
+import Sextorsion from './pages/ado/Sextorsion.jsx'
 import PlateformeDetail from './pages/ado/PlateformeDetail.jsx'
 import Recours from './pages/ado/Recours.jsx'
 import Desescalade from './pages/ado/Desescalade.jsx'
@@ -106,6 +107,7 @@ export default function App() {
         <Route path="proteger/coffre" element={<Coffre />} />
         <Route path="proteger/coffre/ajouter" element={<CoffreAjouter />} />
         <Route path="proteger/securite" element={<SocialProtection />} />
+        <Route path="proteger/sextorsion" element={<Sextorsion />} />
         <Route path="proteger/plateformes" element={<Plateformes />} />
         <Route path="proteger/plateformes/:id" element={<PlateformeDetail />} />
         <Route path="proteger/recours" element={<Recours />} />

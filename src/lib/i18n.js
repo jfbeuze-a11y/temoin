@@ -165,6 +165,13 @@ const ES = {
   // Se protéger
   'Agir sans tout aggraver': 'Actuar sin empeorarlo todo',
   'Sécuriser mes réseaux': 'Proteger mis redes',
+  'On te fait chanter avec une photo ?': '¿Te chantajean con una foto?',
+  'Chantage à une photo intime (sextorsion).': 'Chantaje con una foto íntima (sextorsión).',
+  'Tu vas t’en sortir.': 'Vas a salir de esto.',
+  'À faire tout de suite': 'Qué hacer ahora mismo',
+  'Surtout pas': 'Sobre todo, no',
+  'Signaler sur PHAROS': 'Denunciar en PHAROS',
+  'Danger : 17': 'Peligro: 17',
   'Protéger mon identité en ligne': 'Proteger mi identidad en línea',
   'Me protéger sur les réseaux': 'Proteger mis redes sociales',
   'Sécuriser ton identité sur Instagram, Snapchat, TikTok, Facebook.':
