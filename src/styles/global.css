@@ -1,0 +1,764 @@
+/* ============================================================================
+   Témoin — système de design « Refuge »
+   Calme, chaleureux, digne de confiance. Sobre et non anxiogène (ENF-08).
+   Accessible RGAA 4.1 / WCAG 2.1 AA (EF-X03). Mobile-first.
+   Typo : Fraunces (titres, serif douce) + Hanken Grotesk (texte, sans humaniste).
+   ========================================================================== */
+
+:root {
+  --maxw: 600px;
+  --tap: 48px;
+
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r: 16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --pill: 999px;
+
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---- Thème NUIT (apaisant) — défaut, consultation nocturne (EF-X06) -------- */
+:root,
+[data-theme='calm'] {
+  --bg: #14171a;
+  --bg-2: #11141686;
+  --surface: #1b2127;
+  --surface-2: #222a31;
+  --surface-3: #2b343d;
+  --ink: #eef2f5;
+  --ink-soft: #aab6c0;
+  --ink-faint: #76828d;
+  --line: #2c353e;
+  --line-soft: #232b32;
+
+  --primary: #5ccab6;
+  --primary-ink: #06231f;
+  --primary-deep: #3aa996;
+  --accent: #f1ba62;
+  --teal: #5ccab6;
+  --violet: #b49cf0;
+
+  --ok: #6fd39a;
+  --warn: #f0c36b;
+  --danger: #ff998a;
+  --danger-strong: #e2604f;
+  --on-danger: #fff;
+
+  --glow-1: rgba(92, 202, 182, 0.13);
+  --glow-2: rgba(241, 186, 98, 0.09);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 28px 60px -26px rgba(0, 0, 0, 0.8);
+  --ring: rgba(92, 202, 182, 0.55);
+}
+
+/* ---- Thème JOUR (clair, froid et harmonieux : sauge + teal) ---------------- */
+[data-theme='light'] {
+  --bg: #eaf0ee;
+  --bg-2: #ffffff80;
+  --surface: #ffffff;
+  --surface-2: #f1f5f3;
+  --surface-3: #e4ebe8;
+  --ink: #15211e;
+  --ink-soft: #4e5b57;
+  --ink-faint: #87938e;
+  --line: #dfe7e3;
+  --line-soft: #eef3f1;
+
+  --primary: #0e7b6a;
+  --primary-ink: #ffffff;
+  --primary-deep: #0a5e51;
+  --accent: #a9781f;
+  --teal: #0e7b6a;
+  --violet: #65499f;
+
+  --ok: #138a5a;
+  --warn: #8a6210;
+  --danger: #c0463a;
+  --danger-strong: #a8362b;
+  --on-danger: #fff;
+
+  --glow-1: rgba(14, 123, 106, 0.09);
+  --glow-2: rgba(14, 123, 106, 0.05);
+  --shadow-sm: 0 2px 8px -3px rgba(18, 45, 40, 0.1);
+  --shadow: 0 18px 40px -24px rgba(14, 40, 35, 0.26);
+  --shadow-lg: 0 24px 56px -28px rgba(14, 40, 35, 0.3);
+  --ring: rgba(14, 123, 106, 0.38);
+}
+
+/* Cartes plus présentes en thème clair (effet « flottant ») */
+[data-theme='light'] .card {
+  box-shadow: var(--shadow-sm);
+}
+[data-theme='light'] .banner {
+  box-shadow: 0 6px 18px -12px rgba(20, 50, 44, 0.25);
+}
+
+/* ---- Espace PARENT : recoloration violette de tout le sous-arbre -----------
+   Repère visuel immédiat : l'espace ado est teal, l'espace parent est violet. */
+[data-theme='calm'] .app[data-space='parent'] {
+  --primary: #b49cf0;
+  --primary-ink: #1a1330;
+  --primary-deep: #957ed9;
+  --glow-1: rgba(180, 156, 240, 0.14);
+  --ring: rgba(180, 156, 240, 0.55);
+}
+[data-theme='light'] .app[data-space='parent'] {
+  --primary: #6a4fb0;
+  --primary-ink: #ffffff;
+  --primary-deep: #553c95;
+  --glow-1: rgba(106, 79, 176, 0.1);
+  --ring: rgba(106, 79, 176, 0.42);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Atmosphère : halos doux + grain très subtil */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(120% 70% at 88% -8%, var(--glow-1), transparent 60%),
+    radial-gradient(110% 60% at 0% 6%, var(--glow-2), transparent 55%);
+  pointer-events: none;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+.app {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.content {
+  flex: 1;
+  padding: 14px 20px 116px;
+}
+
+/* ---- Typographie ---------------------------------------------------------- */
+h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.85rem, 7vw, 2.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 6px 0 12px;
+  color: var(--ink);
+}
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 30px 0 10px;
+}
+h3 {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.04rem;
+  letter-spacing: -0.005em;
+  margin: 16px 0 6px;
+}
+p {
+  margin: 10px 0;
+  color: var(--ink-soft);
+}
+.lead {
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+small {
+  color: var(--ink-faint);
+}
+a {
+  color: var(--primary);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+}
+strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ---- En-tête -------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom: 1px solid var(--line-soft);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.brand svg {
+  width: 26px;
+  height: 26px;
+  flex: none;
+}
+.header .title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+}
+.header .spacer {
+  flex: 1;
+}
+
+.iconbtn {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease), background 0.2s, border-color 0.2s;
+}
+.iconbtn:hover {
+  background: var(--surface-2);
+}
+.iconbtn:active {
+  transform: scale(0.94);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Bouton sortie rapide — atteignable, lisible, sans dramatiser (EF-X01) */
+.panic {
+  width: auto;
+  gap: 7px;
+  padding: 0 14px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 45%, var(--line));
+  background: color-mix(in srgb, var(--danger) 8%, var(--surface));
+}
+
+/* ---- Cartes --------------------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  margin: 14px 0;
+  box-shadow: var(--shadow-sm);
+}
+.card.tappable {
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s var(--ease), border-color 0.2s, box-shadow 0.25s;
+}
+.card.tappable:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--line));
+  box-shadow: var(--shadow);
+}
+.card.tappable:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Icône en pastille tintée */
+.chip {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 14%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--primary) 26%, transparent);
+}
+/* Teintes distinctes ado / parent pour l'aiguillage d'accueil */
+.chip.tone-ado {
+  color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 14%, var(--surface));
+  border-color: color-mix(in srgb, var(--teal) 26%, transparent);
+}
+.chip.tone-parent {
+  color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 16%, var(--surface));
+  border-color: color-mix(in srgb, var(--violet) 28%, transparent);
+}
+.linkrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.linkrow .meta {
+  flex: 1;
+  min-width: 0;
+}
+.linkrow .meta strong {
+  font-size: 1.05rem;
+  display: block;
+}
+.linkrow .meta .desc {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+.chev {
+  color: var(--ink-faint);
+  font-size: 1.4rem;
+  flex: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.grid .card {
+  margin: 0;
+}
+
+/* ---- Boutons -------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.15s var(--ease), box-shadow 0.25s, background 0.2s, filter 0.2s;
+}
+.btn:hover {
+  background: var(--surface-3);
+}
+.btn:active {
+  transform: scale(0.985);
+}
+.btn.primary {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 92%, white), var(--primary));
+  color: var(--primary-ink);
+  border-color: var(--primary-deep);
+  box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--primary) 80%, transparent);
+}
+.btn.primary:hover {
+  filter: brightness(1.05);
+}
+.btn.danger {
+  background: var(--danger-strong);
+  color: var(--on-danger);
+  border-color: color-mix(in srgb, var(--danger-strong) 80%, black);
+  box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--danger-strong) 70%, transparent);
+}
+.btn.ghost {
+  background: transparent;
+}
+.btn-row {
+  display: flex;
+  gap: 10px;
+}
+.btn-row .btn {
+  width: auto;
+  flex: 1;
+}
+
+/* ---- Pastilles & badges --------------------------------------------------- */
+.pill {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: var(--pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--line);
+  color: var(--ink-faint);
+  background: var(--surface-2);
+  white-space: nowrap;
+}
+.pill.must {
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+/* ---- Bandeaux ------------------------------------------------------------- */
+.banner {
+  position: relative;
+  border-radius: var(--r);
+  padding: 16px 18px 16px 20px;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.banner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+.banner.neutre {
+  background: color-mix(in srgb, var(--primary) 9%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--line));
+}
+.banner.neutre::before {
+  background: var(--primary);
+}
+.banner.attention {
+  background: color-mix(in srgb, var(--accent) 11%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+}
+.banner.attention::before {
+  background: var(--accent);
+}
+.banner.fort {
+  background: color-mix(in srgb, var(--danger-strong) 10%, var(--surface));
+  border-color: color-mix(in srgb, var(--danger-strong) 32%, var(--line));
+}
+.banner.fort::before {
+  background: var(--danger-strong);
+}
+.banner h1,
+.banner p {
+  color: var(--ink);
+}
+
+/* ---- Navigation basse (barre flottante raffinée) -------------------------- */
+.tabbar {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 28px);
+  max-width: 500px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  padding: 10px 10px 11px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+}
+.tabbar a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  padding: 2px 0;
+  text-decoration: none;
+  color: var(--ink-faint);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+/* Pastille d'icône : neutre, teintée et arrondie à l'état actif */
+.tabbar a .ico {
+  width: 46px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  transition: background 0.22s var(--ease), color 0.22s, transform 0.22s var(--ease);
+}
+.tabbar a .ico svg {
+  display: block;
+}
+.tabbar a:active .ico {
+  transform: scale(0.9);
+}
+.tabbar a.active {
+  color: var(--primary);
+}
+.tabbar a.active .ico {
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
+  color: var(--primary);
+}
+
+/* « Preuves » : cercle teal élevé, élégant et lisible (accès urgent) */
+.tabbar a.center {
+  color: var(--teal);
+  font-weight: 700;
+}
+.tabbar a.center .ico {
+  width: 50px;
+  height: 50px;
+  margin-top: -20px;
+  border-radius: 50%;
+  background: linear-gradient(155deg, color-mix(in srgb, var(--teal) 82%, white), var(--teal));
+  color: var(--primary-ink);
+  border: 3px solid var(--surface);
+  box-shadow: 0 10px 22px -8px color-mix(in srgb, var(--teal) 60%, transparent);
+}
+.tabbar a.center.active .ico,
+.tabbar a.center:hover .ico {
+  filter: brightness(1.05);
+}
+
+/* ---- Formulaires ---------------------------------------------------------- */
+label {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 16px 0 7px;
+}
+input[type='text'],
+input[type='password'],
+input[type='url'],
+input[type='file'],
+textarea,
+select {
+  width: 100%;
+  min-height: var(--tap);
+  padding: 13px 15px;
+  border-radius: 13px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
+  outline: none;
+}
+textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.5;
+}
+.pin {
+  letter-spacing: 0.5em;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+/* ---- Listes de gestes ----------------------------------------------------- */
+.geste {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink);
+}
+.geste:last-child {
+  border-bottom: none;
+}
+.geste .mark {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-top: 1px;
+}
+.geste.do .mark {
+  color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 18%, transparent);
+}
+.geste.dont .mark {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 18%, transparent);
+}
+
+/* ---- Choix (diagnostic, scénarios) ---------------------------------------- */
+.choice {
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+  margin: 9px 0;
+}
+.choice.sel {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface-2));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 35%, transparent) inset;
+}
+
+/* ---- Divers --------------------------------------------------------------- */
+/* Titre ou ligne avec icône au trait */
+.h-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.h-row > svg {
+  flex: none;
+  color: var(--primary);
+}
+.banner.attention .h-row > svg {
+  color: var(--accent);
+}
+.banner.fort .h-row > svg {
+  color: var(--danger-strong);
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+.faint {
+  color: var(--ink-faint);
+}
+.center {
+  text-align: center;
+}
+.stack > * + * {
+  margin-top: 11px;
+}
+.hr {
+  height: 1px;
+  background: var(--line);
+  border: 0;
+  margin: 22px 0;
+}
+ol,
+ul {
+  color: var(--ink-soft);
+}
+ol li,
+ul li {
+  margin: 7px 0;
+}
+
+/* ---- Entrée échelonnée des pages ------------------------------------------ */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.content > * {
+  animation: riseIn 0.5s var(--ease) both;
+}
+.content > *:nth-child(1) { animation-delay: 0.02s; }
+.content > *:nth-child(2) { animation-delay: 0.06s; }
+.content > *:nth-child(3) { animation-delay: 0.1s; }
+.content > *:nth-child(4) { animation-delay: 0.14s; }
+.content > *:nth-child(5) { animation-delay: 0.18s; }
+.content > *:nth-child(6) { animation-delay: 0.22s; }
+.content > *:nth-child(7) { animation-delay: 0.26s; }
+.content > *:nth-child(n + 8) { animation-delay: 0.3s; }
+
+/* ---- Accessibilité --------------------------------------------------------- */
+.skip {
+  position: absolute;
+  left: -999px;
+}
+.skip:focus {
+  left: 14px;
+  top: 14px;
+  z-index: 100;
+  background: var(--primary);
+  color: var(--primary-ink);
+  padding: 11px 16px;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  .content > * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

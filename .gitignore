@@ -1,0 +1,8 @@
+node_modules
+dist
+dev-dist
+*.log
+.vite-dev.log
+.vite-err.log
+.DS_Store
+.claude/
