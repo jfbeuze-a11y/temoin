@@ -7,6 +7,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 // base : '/' en local et dev ; surchargée par VITE_BASE (ex. '/temoin/') au build GitHub Pages.
 export default defineConfig({
   base: process.env.VITE_BASE || '/',
+  build: { outDir: process.env.VITE_OUTDIR || 'dist' },
   plugins: [
     react(),
     VitePWA({

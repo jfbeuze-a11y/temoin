@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
+import { Routes, Route, Outlet, Navigate, useLocation } from 'react-router-dom'
 import { installPanicShortcuts } from './lib/panic.js'
 import { TabBar } from './components/ui.jsx'
 import AccountGate from './components/AccountGate.jsx'
@@ -84,57 +84,72 @@ function OnboardingGate({ children }) {
   return <Onboarding />
 }
 
+// Espace cible du build : 'ado' | 'parent' | undefined (app complète avec page de choix).
+const SPACE = import.meta.env.VITE_SPACE
+
+const adoRoutes = (
+  <Route path="/ado" element={<AdoLayout />}>
+    <Route index element={<AdoHome />} />
+    <Route path="comprendre" element={<Comprendre />} />
+    <Route path="comprendre/diagnostic" element={<Diagnostic />} />
+    <Route path="comprendre/lexique" element={<Lexique />} />
+    <Route path="comprendre/emotion" element={<Emotion />} />
+    <Route path="comprendre/scenarios" element={<Scenarios />} />
+    <Route path="comprendre/fil" element={<Fil />} />
+    <Route path="proteger" element={<Proteger />} />
+    <Route path="proteger/coffre" element={<Coffre />} />
+    <Route path="proteger/coffre/ajouter" element={<CoffreAjouter />} />
+    <Route path="proteger/securite" element={<SocialProtection />} />
+    <Route path="proteger/sextorsion" element={<Sextorsion />} />
+    <Route path="proteger/plateformes" element={<Plateformes />} />
+    <Route path="proteger/plateformes/:id" element={<PlateformeDetail />} />
+    <Route path="proteger/recours" element={<Recours />} />
+    <Route path="proteger/desescalade" element={<Desescalade />} />
+    <Route path="proteger/courriers" element={<Courriers />} />
+    <Route path="accompagne" element={<Accompagne />} />
+    <Route path="accompagne/adulte" element={<AdulteConfiance />} />
+    <Route path="accompagne/recit" element={<Recit />} />
+    <Route path="accompagne/ressources" element={<Ressources />} />
+    <Route path="accompagne/journal" element={<Journal />} />
+    <Route path="temoin" element={<Temoin />} />
+  </Route>
+)
+
+const parentRoutes = (
+  <Route element={<ParentLayout />}>
+    <Route path="/parent" element={<ParentHome />} />
+    <Route path="/parent/signaux" element={<Signaux />} />
+    <Route path="/parent/reagir" element={<Reagir />} />
+    <Route path="/parent/legal" element={<CadreLegal />} />
+    <Route path="/parent/auteur" element={<EnfantAuteur />} />
+    <Route path="/parent/reglages" element={<Reglages />} />
+  </Route>
+)
+
 export default function App() {
   useEffect(() => installPanicShortcuts(), [])
 
+  // Page d'entrée de la racine "/" selon le build.
+  const rootElement =
+    SPACE === 'ado' ? <Navigate to="/ado" replace /> : SPACE === 'parent' ? <Navigate to="/parent" replace /> : <Home />
+  const fallback = SPACE === 'parent' ? '/parent' : SPACE === 'ado' ? '/ado' : '/'
+
   return (
     <AccountGate>
-    <OnboardingGate>
-    <Routes>
-      <Route element={<PlainLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/reglages" element={<Settings />} />
-        <Route path="/compte" element={<Compte />} />
-      </Route>
+      <OnboardingGate>
+        <Routes>
+          <Route element={<PlainLayout />}>
+            <Route path="/" element={rootElement} />
+            <Route path="/reglages" element={<Settings />} />
+            <Route path="/compte" element={<Compte />} />
+          </Route>
 
-      {/* Espace parent : strictement séparé (FC1), recoloré en violet */}
-      <Route element={<ParentLayout />}>
-        <Route path="/parent" element={<ParentHome />} />
-        <Route path="/parent/signaux" element={<Signaux />} />
-        <Route path="/parent/reagir" element={<Reagir />} />
-        <Route path="/parent/legal" element={<CadreLegal />} />
-        <Route path="/parent/auteur" element={<EnfantAuteur />} />
-        <Route path="/parent/reglages" element={<Reglages />} />
-      </Route>
+          {SPACE !== 'parent' && adoRoutes}
+          {SPACE !== 'ado' && parentRoutes}
 
-      {/* Espace ado */}
-      <Route path="/ado" element={<AdoLayout />}>
-        <Route index element={<AdoHome />} />
-        <Route path="comprendre" element={<Comprendre />} />
-        <Route path="comprendre/diagnostic" element={<Diagnostic />} />
-        <Route path="comprendre/lexique" element={<Lexique />} />
-        <Route path="comprendre/emotion" element={<Emotion />} />
-        <Route path="comprendre/scenarios" element={<Scenarios />} />
-        <Route path="comprendre/fil" element={<Fil />} />
-        <Route path="proteger" element={<Proteger />} />
-        <Route path="proteger/coffre" element={<Coffre />} />
-        <Route path="proteger/coffre/ajouter" element={<CoffreAjouter />} />
-        <Route path="proteger/securite" element={<SocialProtection />} />
-        <Route path="proteger/sextorsion" element={<Sextorsion />} />
-        <Route path="proteger/plateformes" element={<Plateformes />} />
-        <Route path="proteger/plateformes/:id" element={<PlateformeDetail />} />
-        <Route path="proteger/recours" element={<Recours />} />
-        <Route path="proteger/desescalade" element={<Desescalade />} />
-        <Route path="proteger/courriers" element={<Courriers />} />
-        <Route path="accompagne" element={<Accompagne />} />
-        <Route path="accompagne/adulte" element={<AdulteConfiance />} />
-        <Route path="accompagne/recit" element={<Recit />} />
-        <Route path="accompagne/ressources" element={<Ressources />} />
-        <Route path="accompagne/journal" element={<Journal />} />
-        <Route path="temoin" element={<Temoin />} />
-      </Route>
-    </Routes>
-    </OnboardingGate>
+          <Route path="*" element={<Navigate to={fallback} replace />} />
+        </Routes>
+      </OnboardingGate>
     </AccountGate>
   )
 }

@@ -23,10 +23,36 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      # La base est alignée automatiquement sur le nom du dépôt (ex. /temoin/).
-      - run: npm run build
+
+      # Deux applications séparées depuis un seul code source :
+      # /<repo>/ado/  (espace ado)   et   /<repo>/parent/  (espace parent)
+      - name: Build ADO
+        run: npm run build
         env:
-          VITE_BASE: /${{ github.event.repository.name }}/
+          VITE_SPACE: ado
+          VITE_BASE: /${{ github.event.repository.name }}/ado/
+          VITE_OUTDIR: dist/ado
+      - name: Build PARENT
+        run: npm run build
+        env:
+          VITE_SPACE: parent
+          VITE_BASE: /${{ github.event.repository.name }}/parent/
+          VITE_OUTDIR: dist/parent
+
+      # Page racine minimale : deux liens (au cas où on ouvre /<repo>/ tout court)
+      - name: Page racine
+        run: |
+          cat > dist/index.html <<'HTML'
+          <!doctype html><html lang="fr"><head><meta charset="utf-8">
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>Témoin</title>
+          <style>body{font-family:system-ui,sans-serif;background:#14171a;color:#eef2f5;margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px}a{display:block;width:280px;max-width:90vw;text-align:center;padding:16px;border-radius:16px;text-decoration:none;font-weight:700}.ado{background:#5ccab6;color:#06231f}.parent{background:#b49cf0;color:#1a1330}h1{font-weight:600}</style>
+          </head><body><h1>Témoin</h1>
+          <a class="ado" href="./ado/">Espace ado</a>
+          <a class="parent" href="./parent/">Espace parent</a>
+          </body></html>
+          HTML
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
