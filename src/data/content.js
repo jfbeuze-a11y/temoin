@@ -7,7 +7,7 @@ const fr = {
     gestes: [
       { do: true, texte: 'Capture d’abord : screene les messages, note les dates et les liens.' },
       { do: true, texte: 'Mets les preuves au chaud dans le coffre AVANT de bloquer.' },
-      { do: true, texte: 'Souffle. T’es pas obligé de répondre tout de suite, ni même de répondre.' },
+      { do: true, texte: 'Respire un coup. T’es pas obligé de répondre tout de suite, ni même de répondre.' },
       { do: false, texte: 'Réponds pas à la provoc : ça fait souvent monter la sauce.' },
       { do: false, texte: 'Te justifie pas, t’as rien à prouver à personne.' },
       { do: false, texte: 'Supprime pas les messages : c’est tes preuves.' },

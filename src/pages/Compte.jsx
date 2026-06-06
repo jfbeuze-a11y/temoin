@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import QRCode from 'qrcode'
 import { Header } from '../components/ui.jsx'
 import { useApp } from '../context/AppContext.jsx'
@@ -11,7 +11,7 @@ import { passwordIssues } from '../lib/account.js'
 export default function Compte() {
   const nav = useNavigate()
   const t = useT()
-  const { createAccount } = useApp()
+  const { createAccount, hasAccount } = useApp()
   const [secret] = useState(() => generateSecret())
   const [qr, setQr] = useState('')
   const [username, setUsername] = useState('')
@@ -26,6 +26,20 @@ export default function Compte() {
   }, [secret, username])
 
   const issues = passwordIssues(pwd)
+
+  if (hasAccount) {
+    return (
+      <>
+        <Header title="Compte sécurisé" back />
+        <h1>{t('Créer un compte sécurisé')}</h1>
+        <div className="banner neutre" role="note">
+          <strong style={{ color: 'var(--ok)' }}>✓ {t('Compte sécurisé activé')}</strong>
+          <p style={{ color: 'var(--ink)', margin: '6px 0 0' }}>{t('Ton compte est déjà activé.')}</p>
+        </div>
+        <Link to="/reglages" className="btn primary">{t('Gérer dans les réglages')}</Link>
+      </>
+    )
+  }
 
   async function submit(e) {
     e.preventDefault()

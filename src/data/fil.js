@@ -105,13 +105,13 @@ const fr = {
       choices: [
         { label: 'Je réponds pour me défendre', to: 'v_repond' },
         { label: 'Je supprime tout et je bloque', to: 'v_supprime' },
-        { label: 'Je garde les preuves et je souffle', to: 'v_preuve' }
+        { label: 'Je garde les preuves et je respire', to: 'v_preuve' }
       ]
     },
     v_repond: {
       text: 'Tu réponds, ça part en clash. Ils en rajoutent, d’autres s’y mettent. Tu te sens encore plus mal.',
       kori: 'Répondre à chaud, ça nourrit souvent l’escalade. On peut reprendre la main autrement.',
-      choices: [{ label: 'Souffler et garder les preuves', to: 'v_preuve' }]
+      choices: [{ label: 'Respirer et garder les preuves', to: 'v_preuve' }]
     },
     v_supprime: {
       text: 'Tu supprimes les messages et tu bloques. Sur le moment ça soulage… mais t’as plus aucune preuve si ça continue.',
@@ -140,7 +140,7 @@ const fr = {
       end: {
         tone: 'good',
         titre: 'Tu as repris la main',
-        texte: 'Garder les preuves, souffler, et en parler : t’es en faute de rien, et t’as pas à gérer ça seul. C’est exactement comme ça qu’on fait arrêter.'
+        texte: 'Garder les preuves, respirer un coup, et en parler : t’es en faute de rien, et t’as pas à gérer ça seul. C’est exactement comme ça qu’on fait arrêter.'
       }
     },
 

@@ -394,6 +394,10 @@ const ES = {
   'Optionnel : protège l’accès à l’app par un mot de passe fort et une double authentification (MFA). L’app reste utilisable sans compte.':
     'Opcional: protege el acceso a la app con una contraseña fuerte y verificación en dos pasos (MFA). La app sigue siendo utilizable sin cuenta.',
   'Créer un compte sécurisé': 'Crear una cuenta segura',
+  'Sécuriser mon accès': 'Proteger mi acceso',
+  'Mot de passe + double authentification (MFA). Optionnel.': 'Contraseña + verificación en dos pasos (MFA). Opcional.',
+  'Ton compte est déjà activé.': 'Tu cuenta ya está activada.',
+  'Gérer dans les réglages': 'Gestionar en los ajustes',
   'Désactiver le compte sécurisé ? Tu pourras le recréer plus tard.':
     '¿Desactivar la cuenta segura? Podrás volver a crearla más tarde.',
   'Se connecter': 'Iniciar sesión',
