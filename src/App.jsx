@@ -3,6 +3,8 @@ import { Routes, Route, Outlet } from 'react-router-dom'
 import { installPanicShortcuts } from './lib/panic.js'
 import { TabBar } from './components/ui.jsx'
 import AccountGate from './components/AccountGate.jsx'
+import Onboarding from './components/Onboarding.jsx'
+import { useApp } from './context/AppContext.jsx'
 
 import Home from './pages/Home.jsx'
 import Settings from './pages/Settings.jsx'
@@ -73,11 +75,17 @@ function ParentLayout() {
   )
 }
 
+function OnboardingGate({ children }) {
+  const { onboarded } = useApp()
+  return onboarded ? children : <Onboarding />
+}
+
 export default function App() {
   useEffect(() => installPanicShortcuts(), [])
 
   return (
     <AccountGate>
+    <OnboardingGate>
     <Routes>
       <Route element={<PlainLayout />}>
         <Route path="/" element={<Home />} />
@@ -121,6 +129,7 @@ export default function App() {
         <Route path="temoin" element={<Temoin />} />
       </Route>
     </Routes>
+    </OnboardingGate>
     </AccountGate>
   )
 }

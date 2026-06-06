@@ -28,6 +28,7 @@ export function AppProvider({ children }) {
   const [theme, setTheme] = useState(() => loadPref('theme', 'calm')) // 'calm' (sombre apaisant) | 'light'
   const [lang, setLang] = useState(() => loadPref('lang', 'fr'))
   const [discreet, setDiscreet] = useState(() => loadPref('discreet', false))
+  const [onboarded, setOnboardedState] = useState(() => loadPref('onboarded', false))
 
   // Clé de chiffrement de l'espace ado — UNIQUEMENT en mémoire, jamais persistée.
   const [adoKey, setAdoKey] = useState(null)
@@ -59,6 +60,10 @@ export function AppProvider({ children }) {
   const updateDiscreet = (v) => {
     setDiscreet(v)
     savePref('discreet', v)
+  }
+  const completeOnboarding = () => {
+    setOnboardedState(true)
+    savePref('onboarded', true)
   }
 
   // Crée le coffre-fort : dérive une clé du code, stocke sel + canary chiffré (jamais le code).
@@ -117,6 +122,8 @@ export function AppProvider({ children }) {
     setLang: updateLang,
     discreet,
     setDiscreet: updateDiscreet,
+    onboarded,
+    completeOnboarding,
     adoKey,
     hasVault,
     createVault,

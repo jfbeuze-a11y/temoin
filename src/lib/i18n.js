@@ -21,6 +21,20 @@ const ES = {
   // Ton décontracté + KORI
   'Je suis Kori': 'Soy Kori',
   'Salut, moi c’est Kori': 'Hola, soy Kori',
+  Passer: 'Saltar',
+  'Suivant': 'Siguiente',
+  'C’est parti': '¡Vamos!',
+  'Ton compagnon de protection contre le cyberharcèlement. Je reste avec toi, discret.':
+    'Tu compañero de protección contra el ciberacoso. Me quedo contigo, discreto.',
+  'Je t’aide, concrètement': 'Te ayudo, en concreto',
+  'Comprendre ce qui t’arrive': 'Entender lo que te pasa',
+  'Mettre tes preuves au chaud': 'Poner tus pruebas a salvo',
+  'Trouver de l’aide au bon moment': 'Encontrar ayuda en el momento justo',
+  'Ici, t’es peinard': 'Aquí estás tranquilo',
+  'Zéro compte, rien ne sort de ton tel. Et l’espace parent est totalement séparé : personne voit ce que tu fais ici.':
+    'Cero cuenta, nada sale de tu móvil. Y el espacio de las familias está totalmente separado: nadie ve lo que haces aquí.',
+  'Besoin d’aide tout de suite ? Le 3018, ou le 17 en cas de danger.':
+    '¿Necesitas ayuda ya? El 3018, o el 17 en caso de peligro.',
   'Le cyberharcèlement ? T’inquiète, je gère avec toi.': '¿El ciberacoso? Tranqui, lo llevamos juntos.',
   'Moi c’est Kori, ton allié. Je t’aide à comprendre ce qui se passe, à garder tes preuves au chaud et à trouver de l’aide. Zéro compte, rien ne sort de ton tel — promis.':
     'Soy Kori, tu aliado. Te ayudo a entender lo que pasa, a guardar tus pruebas a buen recaudo y a encontrar ayuda. Cero cuenta, nada sale de tu móvil — palabra.',
