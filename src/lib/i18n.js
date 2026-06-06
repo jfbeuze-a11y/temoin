@@ -134,6 +134,9 @@ const ES = {
   'Les mots expliqués simplement.': 'Las palabras explicadas de forma sencilla.',
   'Repère ton ressenti.': 'Identifica cómo te sientes.',
   'Conflit ou harcèlement ? Entraîne-toi.': '¿Conflicto o acoso? Practica.',
+  'Une histoire dont tu es le héros.': 'Una historia donde tú decides.',
+  Recommencer: 'Volver a empezar',
+  'Découvrir le rôle de témoin': 'Descubrir el papel del testigo',
 
   // Diagnostic
   'Tes réponses restent sur ton téléphone et ne sont pas enregistrées.':

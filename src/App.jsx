@@ -16,6 +16,7 @@ import Diagnostic from './pages/ado/Diagnostic.jsx'
 import Lexique from './pages/ado/Lexique.jsx'
 import Emotion from './pages/ado/Emotion.jsx'
 import Scenarios from './pages/ado/Scenarios.jsx'
+import Fil from './pages/ado/Fil.jsx'
 import Proteger from './pages/ado/Proteger.jsx'
 import Coffre from './pages/ado/Coffre.jsx'
 import CoffreAjouter from './pages/ado/CoffreAjouter.jsx'
@@ -111,6 +112,7 @@ export default function App() {
         <Route path="comprendre/lexique" element={<Lexique />} />
         <Route path="comprendre/emotion" element={<Emotion />} />
         <Route path="comprendre/scenarios" element={<Scenarios />} />
+        <Route path="comprendre/fil" element={<Fil />} />
         <Route path="proteger" element={<Proteger />} />
         <Route path="proteger/coffre" element={<Coffre />} />
         <Route path="proteger/coffre/ajouter" element={<CoffreAjouter />} />
