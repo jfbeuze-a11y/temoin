@@ -24,6 +24,7 @@ export default function ParentHome() {
       <LinkCard to="/parent/legal" icon="scale" title="Cadre légal et recours" desc="Loi, établissement, plainte." priority="Doit" />
       <LinkCard to="/parent/auteur" icon="rotate" title="Mon enfant est peut-être auteur" desc="Responsabiliser et stopper." priority="Devrait" />
       <LinkCard to="/parent/reglages" icon="sliders" title="Réglages de confidentialité" desc="Les bons réglages par plateforme." priority="Pourrait" />
+      <LinkCard to="/reglages" icon="sliders" title="Réglages de l’app" desc="Thème, langue, compte." />
 
       <div className="banner fort" role="note" style={{ marginTop: 16 }}>
         <strong>{t('Besoin de conseils maintenant ?')}</strong>

@@ -124,6 +124,9 @@ const ES = {
   'Coffre-fort de preuves, bloquer, signaler, recours.': 'Caja fuerte de pruebas, bloquear, denunciar, recursos.',
   'À qui en parler, ressources, journal.': 'Con quién hablar, recursos, diario.',
   'J’ai vu quelqu’un se faire harceler.': 'He visto a alguien sufrir acoso.',
+  'Discrétion, thème, langue, compte.': 'Discreción, tema, idioma, cuenta.',
+  'Réglages de l’app': 'Ajustes de la app',
+  'Thème, langue, compte.': 'Tema, idioma, cuenta.',
   'Besoin d’aide tout de suite ?': '¿Necesitas ayuda ahora mismo?',
 
   // Comprendre

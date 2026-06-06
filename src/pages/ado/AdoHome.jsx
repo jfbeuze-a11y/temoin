@@ -30,6 +30,7 @@ export default function AdoHome() {
       <LinkCard to="/ado/proteger" icon="lock" title="Se protéger" desc="Coffre-fort de preuves, bloquer, signaler, recours." />
       <LinkCard to="/ado/accompagne" icon="lifebuoy" title="Me faire aider" desc="À qui en parler, ressources, journal." />
       <LinkCard to="/ado/temoin" icon="eye" title="Témoin" desc="J’ai vu quelqu’un se faire harceler." />
+      <LinkCard to="/reglages" icon="sliders" title="Réglages" desc="Discrétion, thème, langue, compte." />
     </>
   )
 }

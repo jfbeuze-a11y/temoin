@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, Outlet } from 'react-router-dom'
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import { installPanicShortcuts } from './lib/panic.js'
 import { TabBar } from './components/ui.jsx'
 import AccountGate from './components/AccountGate.jsx'
@@ -78,7 +78,10 @@ function ParentLayout() {
 
 function OnboardingGate({ children }) {
   const { onboarded } = useApp()
-  return onboarded ? children : <Onboarding />
+  const { pathname } = useLocation()
+  // Onboarding KORI réservé à l'espace ado (le lien parent et l'accueil n'en ont pas).
+  if (onboarded || !pathname.startsWith('/ado')) return children
+  return <Onboarding />
 }
 
 export default function App() {
