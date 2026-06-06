@@ -45,8 +45,10 @@ jobs:
           cat > dist/index.html <<'HTML'
           <!doctype html><html lang="fr"><head><meta charset="utf-8">
           <meta name="viewport" content="width=device-width,initial-scale=1">
+          <link rel="icon" type="image/png" href="./kori.png">
+          <link rel="apple-touch-icon" href="./kori.png">
           <title>KORI</title>
-          <style>body{font-family:system-ui,sans-serif;background:#14171a;color:#eef2f5;margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px}.kori{width:160px;height:160px;border-radius:28px;object-fit:cover}h1{font-weight:700;letter-spacing:.04em;margin:4px 0 14px}a{display:block;width:280px;max-width:90vw;text-align:center;padding:16px;border-radius:16px;text-decoration:none;font-weight:700}.ado{background:#5ccab6;color:#06231f}.parent{background:#b49cf0;color:#1a1330}</style>
+          <style>body{font-family:system-ui,sans-serif;background:linear-gradient(180deg,#0e1d38,#04081f);color:#eef2f5;margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px}.kori{width:170px;height:170px;object-fit:cover}h1{font-weight:700;letter-spacing:.04em;margin:4px 0 14px}a{display:block;width:280px;max-width:90vw;text-align:center;padding:16px;border-radius:16px;text-decoration:none;font-weight:700}.ado{background:#5ccab6;color:#06231f}.parent{background:#b49cf0;color:#1a1330}</style>
           </head><body>
           <img class="kori" src="./kori.png" alt="KORI">
           <h1>KORI</h1>
