@@ -334,6 +334,17 @@ strong {
 .card.tappable:active {
   transform: translateY(0) scale(0.99);
 }
+/* Carte mise en avant (ex. coffre-fort) */
+.card.tappable.featured {
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+  box-shadow: 0 14px 30px -16px color-mix(in srgb, var(--primary) 70%, transparent);
+}
+.card.tappable.featured .chip {
+  background: var(--primary);
+  color: var(--primary-ink);
+  border-color: var(--primary);
+}
 
 /* Icône en pastille tintée */
 .chip {

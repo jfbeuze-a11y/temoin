@@ -152,12 +152,12 @@ const PRIORITY_LABELS = {
 }
 
 // Carte de navigation avec pastille d'icône, description et conseil d'usage.
-export function LinkCard({ to, title, desc, icon, priority }) {
+export function LinkCard({ to, title, desc, icon, priority, featured = false }) {
   const t = useT()
   const { lang } = useApp()
   const prioLabels = PRIORITY_LABELS[lang] || PRIORITY_LABELS.fr
   return (
-    <NavLink to={to} className="card tappable">
+    <NavLink to={to} className={'card tappable' + (featured ? ' featured' : '')}>
       <div className="linkrow">
         {icon && (
           <span className="chip" aria-hidden="true">
