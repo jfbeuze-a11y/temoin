@@ -42,7 +42,7 @@ const fr = {
       conseils: [
         { titre: 'Compte privé', texte: 'Paramètres et confidentialité → Confidentialité → active « Compte privé ».' },
         { titre: 'Vérification en deux étapes', texte: 'Paramètres → Sécurité → Vérification en 2 étapes.' },
-        { titre: 'Commentaires, Duos, Coutures, téléchargements', texte: 'Confidentialité → restreins qui peut commenter, faire un Duo (vos vidéos côte à côte) ou une Couture (reprendre un extrait de ta vidéo, le « Stitch »), et télécharger tes vidéos.' },
+        { titre: 'Commentaires, Duos, Stitch, téléchargements', texte: 'Confidentialité → choisis qui peut commenter, faire un Duo (vos vidéos côte à côte) ou un Stitch (« Couture » en français : reprendre un bout de ta vidéo dans la sienne), et télécharger tes vidéos.' },
         { titre: 'Messages', texte: 'Confidentialité → Messages directs → limite à « Amis » ou désactive.' },
         { titre: 'Qui peut te trouver', texte: 'Désactive les suggestions de ton compte à d’autres personnes.' }
       ]
@@ -103,7 +103,7 @@ const es = {
       conseils: [
         { titre: 'Cuenta privada', texte: 'Ajustes y privacidad → Privacidad → activa «Cuenta privada».' },
         { titre: 'Verificación en dos pasos', texte: 'Ajustes → Seguridad → Verificación en dos pasos.' },
-        { titre: 'Comentarios, Dúos, Costuras, descargas', texte: 'Privacidad → restringe quién puede comentar, hacer un Dúo (vuestros vídeos en paralelo) o una Costura (reutilizar un trozo de tu vídeo, el «Stitch»), y descargar tus vídeos.' },
+        { titre: 'Comentarios, Dúos, Stitch, descargas', texte: 'Privacidad → elige quién puede comentar, hacer un Dúo (vuestros vídeos en paralelo) o un Stitch (reutilizar un trozo de tu vídeo en el suyo), y descargar tus vídeos.' },
         { titre: 'Mensajes', texte: 'Privacidad → Mensajes directos → limita a «Amigos» o desactiva.' },
         { titre: 'Quién puede encontrarte', texte: 'Desactiva que sugieran tu cuenta a otras personas.' }
       ]
