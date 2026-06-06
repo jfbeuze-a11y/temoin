@@ -345,6 +345,16 @@ strong {
   color: var(--primary-ink);
   border-color: var(--primary);
 }
+/* Carte d'une autre couleur (ex. compte sécurisé en ambre) */
+.card.tappable.accent-amber {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+.card.tappable.accent-amber .chip {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
 
 /* Icône en pastille tintée */
 .chip {
