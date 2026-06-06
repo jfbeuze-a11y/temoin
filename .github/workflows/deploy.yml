@@ -46,21 +46,15 @@ jobs:
           <!doctype html><html lang="fr"><head><meta charset="utf-8">
           <meta name="viewport" content="width=device-width,initial-scale=1">
           <title>KORI</title>
-          <style>body{font-family:system-ui,sans-serif;background:#14171a;color:#eef2f5;margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px}svg.kori{width:160px;height:160px}h1{font-weight:700;letter-spacing:.04em;margin:4px 0 14px}a{display:block;width:280px;max-width:90vw;text-align:center;padding:16px;border-radius:16px;text-decoration:none;font-weight:700}.ado{background:#5ccab6;color:#06231f}.parent{background:#b49cf0;color:#1a1330}</style>
+          <style>body{font-family:system-ui,sans-serif;background:#14171a;color:#eef2f5;margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px}.kori{width:160px;height:160px;border-radius:28px;object-fit:cover}h1{font-weight:700;letter-spacing:.04em;margin:4px 0 14px}a{display:block;width:280px;max-width:90vw;text-align:center;padding:16px;border-radius:16px;text-decoration:none;font-weight:700}.ado{background:#5ccab6;color:#06231f}.parent{background:#b49cf0;color:#1a1330}</style>
           </head><body>
-          <svg class="kori" viewBox="0 0 48 48" fill="none" aria-label="KORI">
-          <defs><linearGradient id="k" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#6FA8FF"/><stop offset="1" stop-color="#B98CF2"/></linearGradient></defs>
-          <path d="M24 4C13 4 6 13 6 26c0 6 1.8 11.2 5 15-2-5-2.4-9-2.4-13C8.6 17.5 15 11 24 11s15.4 6.5 15.4 17c0 4-.4 8-2.4 13 3.2-3.8 5-9 5-15C42 13 35 4 24 4Z" fill="url(#k)"/>
-          <path d="M24 12c-7.2 0-12.2 6.2-12.2 15 0 5 1.8 10 5 14 1.2-3 2-6.2 2-10 0-5 2-9 5.2-9s5.2 4 5.2 9c0 3.8.8 7 2 10 3.2-4 5-9 5-14 0-8.8-5-15-12.2-15Z" fill="#1b2452"/>
-          <path d="M24 17l3.4 4.3-3.4 4.3-3.4-4.3z" fill="#E7EEFF"/>
-          <path d="M16.6 28c2.3-1.5 4.8-1.5 6.7 0-1.9 1.9-4.8 1.9-6.7 0z" fill="#6FA8FF"/>
-          <path d="M24.7 28c1.9-1.5 4.4-1.5 6.7 0-2.3 1.9-4.8 1.9-6.7 0z" fill="#B98CF2"/>
-          </svg>
+          <img class="kori" src="./kori.png" alt="KORI">
           <h1>KORI</h1>
           <a class="ado" href="./ado/">Espace ado</a>
           <a class="parent" href="./parent/">Espace parent</a>
           </body></html>
           HTML
+          cp public/kori.png dist/kori.png
 
       # Remplace l'ancien service worker /<repo>/sw.js par un « kill-switch »
       # qui se désinscrit et vide les caches (évite de servir l'ancienne app).
