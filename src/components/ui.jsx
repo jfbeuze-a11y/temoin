@@ -68,15 +68,15 @@ export function BrandMark() {
   )
 }
 
-// KORI — logo officiel (fichier public/kori.png, résolu selon la base du build).
+// KORI — logo officiel détouré (fond transparent) pour s'intégrer à tout fond.
 export function KoriLogo({ size = 30 }) {
   return (
     <img
-      src={import.meta.env.BASE_URL + 'kori.png'}
+      src={import.meta.env.BASE_URL + 'kori-t.png'}
       width={size}
       height={size}
       alt="Kori"
-      style={{ display: 'block', borderRadius: '22%', objectFit: 'cover' }}
+      style={{ display: 'block', objectFit: 'contain' }}
     />
   )
 }
