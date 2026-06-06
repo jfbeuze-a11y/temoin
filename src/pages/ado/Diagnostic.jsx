@@ -56,7 +56,7 @@ export default function Diagnostic() {
 
   return (
     <>
-      <Header title="Autodiagnostic" back />
+      <Header title="C’est du harcèlement ?" back />
       <p className="eyebrow">{t('Question')} {step + 1} / {questions.length} : {q.critere}</p>
       <h1>{q.question}</h1>
       <p className="lead">{q.help}</p>

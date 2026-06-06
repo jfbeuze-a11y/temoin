@@ -68,6 +68,35 @@ export function BrandMark() {
   )
 }
 
+// KORI — mascotte / compagnon (gardien encapuchonné au cristal).
+export function KoriLogo({ size = 30 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-label="Kori" role="img">
+      <defs>
+        <linearGradient id="koriG" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#6FA8FF" />
+          <stop offset="1" stopColor="#B98CF2" />
+        </linearGradient>
+      </defs>
+      {/* capuche extérieure */}
+      <path
+        d="M24 4C13 4 6 13 6 26c0 6 1.8 11.2 5 15-2-5-2.4-9-2.4-13C8.6 17.5 15 11 24 11s15.4 6.5 15.4 17c0 4-.4 8-2.4 13 3.2-3.8 5-9 5-15C42 13 35 4 24 4Z"
+        fill="url(#koriG)"
+      />
+      {/* intérieur de la capuche (visage) */}
+      <path
+        d="M24 12c-7.2 0-12.2 6.2-12.2 15 0 5 1.8 10 5 14 1.2-3 2-6.2 2-10 0-5 2-9 5.2-9s5.2 4 5.2 9c0 3.8.8 7 2 10 3.2-4 5-9 5-14 0-8.8-5-15-12.2-15Z"
+        fill="#1b2452"
+      />
+      {/* cristal */}
+      <path d="M24 17l3.4 4.3-3.4 4.3-3.4-4.3z" fill="#E7EEFF" />
+      {/* yeux */}
+      <path d="M16.6 28c2.3-1.5 4.8-1.5 6.7 0-1.9 1.9-4.8 1.9-6.7 0z" fill="#6FA8FF" />
+      <path d="M24.7 28c1.9-1.5 4.4-1.5 6.7 0-2.3 1.9-4.8 1.9-6.7 0z" fill="#B98CF2" />
+    </svg>
+  )
+}
+
 // Bouton de sortie rapide — présent partout (EF-X01 / FC3).
 export function PanicButton() {
   const t = useT()
@@ -96,12 +125,15 @@ export function Header({ title, back = false, right = null }) {
           <span className="title">{t(title)}</span>
         </>
       ) : (
-        <span className="brand">
-          <BrandMark />
-          {title === 'Témoin' ? title : t(title)}
-        </span>
+        <span className="brand">{title === 'Témoin' ? title : t(title)}</span>
       )}
       <span className="spacer" />
+      {!back && (
+        <>
+          <KoriLogo />
+          <span className="spacer" />
+        </>
+      )}
       {right}
       <LangButton />
       <PanicButton />

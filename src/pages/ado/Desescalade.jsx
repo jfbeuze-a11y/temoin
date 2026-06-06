@@ -7,7 +7,7 @@ export default function Desescalade() {
   const desescalade = getContent(lang).desescalade
   return (
     <>
-      <Header title="Garder la tête froide" back />
+      <Header title="Souffle un coup" back />
       <h1>{desescalade.titre}</h1>
       <p className="lead">{desescalade.intro}</p>
       <div className="card">

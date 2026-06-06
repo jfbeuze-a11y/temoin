@@ -24,7 +24,7 @@ export default function Temoin() {
       <h1>{t('J’ai vu quelqu’un se faire harceler')}</h1>
       <p className="lead">{temoin.intro}</p>
 
-      <h2>{t('Des micro-gestes utiles et sans risque')}</h2>
+      <h2>{t('Des petits gestes qui changent tout, sans te griller')}</h2>
       {temoin.microGestes.map((g, i) => (
         <div className="card" key={i}>
           <strong>{i + 1}. {g.titre}</strong>

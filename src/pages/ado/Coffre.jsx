@@ -50,7 +50,7 @@ function CoffreInner() {
       <div className="banner neutre" role="note">
         <strong className="h-row"><Icon name="lock" size={18} /> {t('Chiffré sur ton téléphone.')}</strong>
         <p style={{ margin: '4px 0 0' }}>
-          {t('Chaque pièce est horodatée et scellée par une empreinte unique. Si on la modifie, l’empreinte le révèle.')}
+          {t('Chaque preuve est datée et verrouillée : si on y touche, ça se voit.')}
         </p>
       </div>
 

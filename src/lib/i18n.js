@@ -17,6 +17,26 @@ const ES = {
   Preuves: 'Pruebas',
   Soutien: 'Apoyo',
   Protéger: 'Proteger',
+
+  // Ton décontracté + KORI
+  'Je suis Kori': 'Soy Kori',
+  'Face au cyberharcèlement, je suis là pour toi.': 'Frente al ciberacoso, estoy contigo.',
+  'Moi c’est Kori, ton compagnon de protection. Je t’aide à capter ce qui t’arrive, à mettre tes preuves à l’abri et à trouver de l’aide. Pas besoin de compte, rien ne sort de ton tel.':
+    'Soy Kori, tu compañero de protección. Te ayudo a pillar lo que te pasa, a poner tus pruebas a salvo y a encontrar ayuda. Sin cuenta, nada sale de tu móvil.',
+  'On commence par quoi ?': '¿Por dónde empezamos?',
+  'Choisis ce qu’il te faut, là, maintenant. Ou jette juste un œil.':
+    'Elige lo que necesitas, aquí y ahora. O solo echa un vistazo.',
+  'Me faire aider': 'Buscar ayuda',
+  'Mettre un mot sur ce qui t’arrive, c’est déjà reprendre la main.':
+    'Ponerle nombre a lo que te pasa ya es recuperar el control.',
+  'C’est du harcèlement ?': '¿Es acoso?',
+  'Réagir sans que ça parte en vrille': 'Reaccionar sin que se descontrole',
+  'Souffle un coup': 'Respira un momento',
+  'Des petits gestes qui changent tout, sans te griller': 'Pequeños gestos que cambian todo, sin exponerte',
+  'Mettre à l’abri': 'Poner a salvo',
+  'Trouver mes mots': 'Encontrar mis palabras',
+  'Chaque preuve est datée et verrouillée : si on y touche, ça se voit.':
+    'Cada prueba lleva fecha y candado: si alguien la toca, se nota.',
   'Réglages, discrétion et accessibilité': 'Ajustes, discreción y accesibilidad',
   'En cas de danger immédiat, appelle le 17 (ou le 112).': 'En caso de peligro inmediato, llama al 17 (o al 112).',
   Supprimer: 'Eliminar',

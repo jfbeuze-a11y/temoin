@@ -2,8 +2,8 @@
 
 const fr = {
   desescalade: {
-    titre: 'Garder la tête froide',
-    intro: 'Sur le moment, on a envie de répondre. Voici les réflexes qui protègent.',
+    titre: 'Souffle un coup',
+    intro: 'Sur le moment, t’as envie de répondre direct. Voici les réflexes qui te protègent.',
     gestes: [
       { do: true, texte: 'Documente d’abord : capture les messages, note les dates et les liens.' },
       { do: true, texte: 'Préserve les preuves dans le coffre-fort AVANT de bloquer.' },
@@ -153,8 +153,8 @@ J’ai besoin de votre aide, et surtout que vous ne réagissiez pas à chaud. On
 
 const es = {
   desescalade: {
-    titre: 'Mantener la calma',
-    intro: 'En el momento, dan ganas de responder. Estos son los reflejos que protegen.',
+    titre: 'Respira un momento',
+    intro: 'En el momento dan ganas de responder ya. Estos son los reflejos que te protegen.',
     gestes: [
       { do: true, texte: 'Documenta primero: captura los mensajes, anota las fechas y los enlaces.' },
       { do: true, texte: 'Guarda las pruebas en la caja fuerte ANTES de bloquear.' },

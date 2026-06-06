@@ -93,7 +93,7 @@ export default function Recit() {
   return (
     <>
       <Header title="Mon récit" back />
-      <h1>{t('Préparer mes mots')}</h1>
+      <h1>{t('Trouver mes mots')}</h1>
       <VaultGate>
         <RecitInner />
       </VaultGate>

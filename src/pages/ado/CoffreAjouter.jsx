@@ -82,7 +82,7 @@ function AjouterInner() {
       <p className="muted" style={{ fontSize: '0.82rem' }}>
         {t('En enregistrant, la pièce est horodatée, scellée par une empreinte SHA-256 puis chiffrée sur ton téléphone.')}
       </p>
-      <button className="btn primary" disabled={busy} onClick={save}>{t('Sceller et enregistrer')}</button>
+      <button className="btn primary" disabled={busy} onClick={save}>{t('Mettre à l’abri')}</button>
     </>
   )
 }

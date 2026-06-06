@@ -10,8 +10,8 @@ export default function AdoHome() {
     <>
       <Header title="Mon espace" />
       <p className="eyebrow">{t('Espace ado privé')}</p>
-      <h1>{t('Par où commencer ?')}</h1>
-      <p className="lead">{t('Choisis ce dont tu as besoin maintenant. Tu peux aussi juste explorer.')}</p>
+      <h1>{t('On commence par quoi ?')}</h1>
+      <p className="lead">{t('Choisis ce qu’il te faut, là, maintenant. Ou jette juste un œil.')}</p>
 
       {/* Raccourci d'urgence : garder les preuves et appeler à l'aide en un geste */}
       <div className="card" style={{ borderColor: 'color-mix(in srgb, var(--primary) 35%, var(--line))' }}>
@@ -28,7 +28,7 @@ export default function AdoHome() {
       <LinkCard to="/ado/proteger/securite" icon="shield" title="Me protéger sur les réseaux" desc="Sécuriser ton identité sur Instagram, Snapchat, TikTok, Facebook." />
       <LinkCard to="/ado/comprendre" icon="lightbulb" title="Comprendre" desc="Est-ce du harcèlement ? Mots et repères." />
       <LinkCard to="/ado/proteger" icon="lock" title="Se protéger" desc="Coffre-fort de preuves, bloquer, signaler, recours." />
-      <LinkCard to="/ado/accompagne" icon="lifebuoy" title="Être accompagné" desc="À qui en parler, ressources, journal." />
+      <LinkCard to="/ado/accompagne" icon="lifebuoy" title="Me faire aider" desc="À qui en parler, ressources, journal." />
       <LinkCard to="/ado/temoin" icon="eye" title="Témoin" desc="J’ai vu quelqu’un se faire harceler." />
     </>
   )

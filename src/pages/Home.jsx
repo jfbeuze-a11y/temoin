@@ -11,11 +11,11 @@ export default function Home() {
       <Header title="Témoin" />
 
       <div style={{ paddingTop: 14 }}>
-        <p className="eyebrow">{t('Compagnon de protection')}</p>
-        <h1>{t('Face au cyberharcèlement, on est là pour toi.')}</h1>
+        <p className="eyebrow">{t('Je suis Kori')}</p>
+        <h1>{t('Face au cyberharcèlement, je suis là pour toi.')}</h1>
         <p className="lead">
           {t(
-            'Témoin t’aide à comprendre la situation, à mettre tes preuves à l’abri et à trouver de l’aide. Sans compte. Rien ne quitte ton téléphone.'
+            'Moi c’est Kori, ton compagnon de protection. Je t’aide à capter ce qui t’arrive, à mettre tes preuves à l’abri et à trouver de l’aide. Pas besoin de compte, rien ne sort de ton tel.'
           )}
         </p>
       </div>
