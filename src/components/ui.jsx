@@ -68,19 +68,15 @@ export function BrandMark() {
   )
 }
 
-// KORI — logo adaptatif : nuit = détouré (fusion) ; jour = logo complet (icône arrondie).
+// KORI — logo officiel détouré (fond transparent), harmonieux sur tout fond / thème.
 export function KoriLogo({ size = 30 }) {
-  const { theme } = useApp()
-  const light = theme === 'light'
   return (
     <img
-      src={import.meta.env.BASE_URL + (light ? 'kori.png' : 'kori-t.png')}
+      src={import.meta.env.BASE_URL + 'kori-t.png'}
       width={size}
       height={size}
       alt="Kori"
-      style={light
-        ? { display: 'block', borderRadius: '22%', objectFit: 'cover' }
-        : { display: 'block', objectFit: 'contain' }}
+      style={{ display: 'block', objectFit: 'contain' }}
     />
   )
 }

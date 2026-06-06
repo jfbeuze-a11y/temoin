@@ -6,7 +6,7 @@ export default function ParentHome() {
   const t = useT()
   return (
     <>
-      <Header title="Espace parent" back />
+      <Header title="Espace parent" />
       <p className="eyebrow">{t('Espace parent')}</p>
       <h1>{t('Accompagner sans surveiller')}</h1>
 
