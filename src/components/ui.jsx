@@ -1,8 +1,55 @@
+import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { panicExit } from '../lib/panic.js'
 import { Icon } from './icons.jsx'
-import { useT } from '../lib/i18n.js'
+import { useT, langs } from '../lib/i18n.js'
 import { useApp } from '../context/AppContext.jsx'
+
+// Sélecteur de langue discret (icône globe + petit menu) — placé près de « Quitter ».
+export function LangButton() {
+  const { lang, setLang } = useApp()
+  const t = useT()
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+  useEffect(() => {
+    function onDoc(e) {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('click', onDoc)
+    return () => document.removeEventListener('click', onDoc)
+  }, [])
+  return (
+    <div ref={ref} style={{ position: 'relative' }}>
+      <button
+        className="iconbtn"
+        aria-label={t('Changer de langue')}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+      >
+        <Icon name="globe" size={20} />
+      </button>
+      {open && (
+        <div className="lang-menu" role="menu">
+          {langs.map((l) => (
+            <button
+              key={l.code}
+              role="menuitemradio"
+              aria-checked={lang === l.code}
+              className={'lang-item' + (lang === l.code ? ' active' : '')}
+              onClick={() => {
+                setLang(l.code)
+                setOpen(false)
+              }}
+            >
+              {l.label}{lang === l.code ? ' ✓' : ''}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 // Marque — bouclier protecteur, douce et rassurante.
 export function BrandMark() {
@@ -56,6 +103,7 @@ export function Header({ title, back = false, right = null }) {
       )}
       <span className="spacer" />
       {right}
+      <LangButton />
       <PanicButton />
     </header>
   )

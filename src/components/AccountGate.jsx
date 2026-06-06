@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useApp } from '../context/AppContext.jsx'
 import { useT } from '../lib/i18n.js'
-import { BrandMark, PanicButton } from './ui.jsx'
+import { BrandMark, PanicButton, LangButton } from './ui.jsx'
 
 // Verrou de compte OPTIONNEL : ne s'active que si l'utilisateur a créé un compte.
 // L'app reste pleinement utilisable sans compte (accès en urgence préservé).
@@ -29,6 +29,7 @@ export default function AccountGate({ children }) {
       <header className="header">
         <span className="brand"><BrandMark /> Témoin</span>
         <span className="spacer" />
+        <LangButton />
         <PanicButton />
       </header>
       <main className="content">

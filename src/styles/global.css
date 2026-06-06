@@ -673,6 +673,39 @@ textarea {
 }
 
 /* ---- Divers --------------------------------------------------------------- */
+/* Menu déroulant du sélecteur de langue */
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  min-width: 156px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.lang-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 11px 12px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  border-radius: 9px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lang-item:hover {
+  background: var(--surface-2);
+}
+.lang-item.active {
+  color: var(--primary);
+}
+
 /* Titre ou ligne avec icône au trait */
 .h-row {
   display: flex;
