@@ -5,24 +5,24 @@ const fr = {
     titre: 'Souffle un coup',
     intro: 'Sur le moment, t’as envie de répondre direct. Voici les réflexes qui te protègent.',
     gestes: [
-      { do: true, texte: 'Documente d’abord : capture les messages, note les dates et les liens.' },
-      { do: true, texte: 'Préserve les preuves dans le coffre-fort AVANT de bloquer.' },
-      { do: true, texte: 'Respire. Rien ne t’oblige à répondre tout de suite, ni à répondre du tout.' },
-      { do: false, texte: 'Ne réponds pas à la provocation : ça nourrit souvent l’escalade.' },
-      { do: false, texte: 'Ne te justifie pas, ne te défends pas pied à pied : tu n’as rien à prouver.' },
-      { do: false, texte: 'Ne supprime pas les messages : ce sont tes preuves.' },
-      { do: true, texte: 'Parles-en à un adulte de confiance dès que possible.' }
+      { do: true, texte: 'Capture d’abord : screene les messages, note les dates et les liens.' },
+      { do: true, texte: 'Mets les preuves au chaud dans le coffre AVANT de bloquer.' },
+      { do: true, texte: 'Souffle. T’es pas obligé de répondre tout de suite, ni même de répondre.' },
+      { do: false, texte: 'Réponds pas à la provoc : ça fait souvent monter la sauce.' },
+      { do: false, texte: 'Te justifie pas, t’as rien à prouver à personne.' },
+      { do: false, texte: 'Supprime pas les messages : c’est tes preuves.' },
+      { do: true, texte: 'Dès que tu peux, parles-en à un adulte en qui t’as confiance.' }
     ]
   },
   temoin: {
-    intro: 'Ce qui fait basculer une situation, ce n’est presque jamais l’adulte : c’est le pair qui rompt le silence. Tu peux aider, sans t’exposer.',
+    intro: 'Ce qui fait basculer une situation, c’est presque jamais l’adulte : c’est le pote qui brise le silence. Tu peux aider, sans te griller.',
     microGestes: [
-      { titre: 'Ne pas amplifier', texte: 'Ne like pas, ne partage pas, ne commente pas le contenu humiliant. Sans audience, l’attaque s’essouffle.' },
-      { titre: 'Soutenir en privé', texte: 'Envoie un message discret à la personne ciblée : « Je trouve ça nul, je suis là si tu veux. » Ça compte énormément.' },
-      { titre: 'Signaler le contenu', texte: 'Signale la publication à la plateforme. Le faire à plusieurs accélère le retrait. Tu peux le faire anonymement.' },
-      { titre: 'En parler à un adulte', texte: 'Tu n’es pas en train de « balancer » : tu protèges quelqu’un. Un adulte de confiance peut agir là où tu ne peux pas.' }
+      { titre: 'Ne pas amplifier', texte: 'Like pas, partage pas, commente pas le truc humiliant. Sans public, l’attaque retombe vite.' },
+      { titre: 'Soutenir en privé', texte: 'Envoie un petit MP à la personne visée : « Je trouve ça nul, je suis là si besoin. » Ça compte grave.' },
+      { titre: 'Signaler le contenu', texte: 'Signale le post à la plateforme. À plusieurs, ça part plus vite. Et tu peux le faire en anonyme.' },
+      { titre: 'En parler à un adulte', texte: 'Tu balances pas : tu protèges quelqu’un. Un adulte de confiance peut agir là où toi tu peux pas.' }
     ],
-    responsabilite: 'Partager ou « liker » un contenu humiliant n’est pas neutre : ça participe à la diffusion. La loi reconnaît la responsabilité de ceux qui relaient. Choisir de ne pas amplifier, c’est déjà agir.',
+    responsabilite: 'Partager ou liker un truc humiliant, c’est pas neutre : ça participe à la diffusion. La loi reconnaît la responsabilité de ceux qui relaient. Choisir de pas en rajouter, c’est déjà agir.',
     scriptAdulte: 'Bonjour, je voudrais vous parler de quelque chose. Un camarade se fait harceler en ligne et je ne sais pas comment l’aider. Est-ce qu’on peut en discuter ?'
   },
   adulteConfiance: {
@@ -156,24 +156,24 @@ const es = {
     titre: 'Respira un momento',
     intro: 'En el momento dan ganas de responder ya. Estos son los reflejos que te protegen.',
     gestes: [
-      { do: true, texte: 'Documenta primero: captura los mensajes, anota las fechas y los enlaces.' },
-      { do: true, texte: 'Guarda las pruebas en la caja fuerte ANTES de bloquear.' },
-      { do: true, texte: 'Respira. Nada te obliga a responder enseguida, ni a responder.' },
-      { do: false, texte: 'No respondas a la provocación: suele alimentar la escalada.' },
-      { do: false, texte: 'No te justifiques ni te defiendas punto por punto: no tienes nada que demostrar.' },
+      { do: true, texte: 'Captura primero: hazte capturas de los mensajes, anota fechas y enlaces.' },
+      { do: true, texte: 'Pon las pruebas a buen recaudo en la caja ANTES de bloquear.' },
+      { do: true, texte: 'Respira. No tienes por qué responder ya, ni siquiera responder.' },
+      { do: false, texte: 'No piques con la provocación: suele echar más leña al fuego.' },
+      { do: false, texte: 'No te justifiques, no tienes nada que demostrarle a nadie.' },
       { do: false, texte: 'No borres los mensajes: son tus pruebas.' },
-      { do: true, texte: 'Habla con un adulto de confianza lo antes posible.' }
+      { do: true, texte: 'En cuanto puedas, habla con un adulto en quien confíes.' }
     ]
   },
   temoin: {
-    intro: 'Lo que cambia una situación casi nunca es el adulto: es el compañero que rompe el silencio. Puedes ayudar sin exponerte.',
+    intro: 'Lo que cambia una situación casi nunca es el adulto: es el colega que rompe el silencio. Puedes ayudar sin exponerte.',
     microGestes: [
-      { titre: 'No amplificar', texte: 'No des «me gusta», no compartas, no comentes el contenido humillante. Sin audiencia, el ataque se apaga.' },
-      { titre: 'Apoyar en privado', texte: 'Envía un mensaje discreto a la persona atacada: «Me parece fatal, estoy aquí si quieres.» Eso cuenta muchísimo.' },
-      { titre: 'Denunciar el contenido', texte: 'Denuncia la publicación a la plataforma. Hacerlo entre varios acelera la retirada. Puedes hacerlo de forma anónima.' },
-      { titre: 'Hablar con un adulto', texte: 'No estás «chivándote»: estás protegiendo a alguien. Un adulto de confianza puede actuar donde tú no puedes.' }
+      { titre: 'No amplificar', texte: 'No des «me gusta», no compartas, no comentes el contenido humillante. Sin público, el ataque se apaga rápido.' },
+      { titre: 'Apoyar en privado', texte: 'Mándale un MP a la persona atacada: «Me parece fatal, estoy aquí si lo necesitas.» Eso cuenta un montón.' },
+      { titre: 'Denunciar el contenido', texte: 'Denuncia el post a la plataforma. Entre varios va más rápido. Y puedes hacerlo en anónimo.' },
+      { titre: 'Hablar con un adulto', texte: 'No te estás chivando: estás protegiendo a alguien. Un adulto de confianza puede actuar donde tú no puedes.' }
     ],
-    responsabilite: 'Compartir o dar «me gusta» a un contenido humillante no es neutral: participa en su difusión. La ley reconoce la responsabilidad de quienes lo difunden. Elegir no amplificar ya es actuar.',
+    responsabilite: 'Compartir o dar «me gusta» a algo humillante no es neutral: participa en su difusión. Elegir no echar más leña ya es actuar.',
     scriptAdulte: 'Hola, me gustaría hablar de algo. Un compañero está sufriendo acoso en línea y no sé cómo ayudarlo. ¿Podemos hablarlo?'
   },
   adulteConfiance: {
