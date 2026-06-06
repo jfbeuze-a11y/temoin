@@ -130,7 +130,7 @@ export function Header({ title, back = false, right = null }) {
       <span className="spacer" />
       {!back && (
         <>
-          <KoriLogo size={52} />
+          <KoriLogo size={64} />
           <span className="spacer" />
         </>
       )}
