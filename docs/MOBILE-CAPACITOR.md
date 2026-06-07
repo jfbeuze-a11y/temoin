@@ -35,12 +35,14 @@ npm i -D @capacitor/assets
 npx @capacitor/assets generate --iconBackgroundColor "#14171a" --splashBackgroundColor "#14171a"
 ```
 
-## Durcissement natif à ajouter (prochaine étape sécurité)
-Plugins recommandés (à installer puis utiliser uniquement en contexte natif via `Capacitor.isNativePlatform()`) :
-- **Biométrie** (empreinte/visage) : `@aparajita/capacitor-biometric-auth`
-- **Stockage sécurisé** (Keychain iOS / Keystore Android) : `@aparajita/capacitor-secure-storage`
+## Durcissement natif — DÉJÀ INTÉGRÉ ✅
+La **biométrie + stockage sécurisé** est codée et **active uniquement en natif** (web inchangé) :
+- Plugin : `capacitor-native-biometric` (Keychain iOS / Keystore Android).
+- Code : `src/lib/biometric.js` (tout est guardé par `Capacitor.isNativePlatform()` ; chargement paresseux du plugin → jamais exécuté sur le web).
+- UX (`VaultGate`) : en natif, case **« Activer le déverrouillage par biométrie »** à la création/déverrouillage (le code est rangé dans le coffre sécurisé natif), puis bouton **« Déverrouiller avec la biométrie »** au lancement.
+- Le chiffrement (AES-256-GCM, PBKDF2 600k) reste la base ; la biométrie ne fait que protéger/restituer le code via le matériel.
 
-Idée d'intégration : sur mobile natif, proposer le **déverrouillage biométrique** du coffre, et stocker la clé/paramètres sensibles dans le stockage sécurisé natif plutôt que via le seul code. Le reste du chiffrement (AES-256-GCM, PBKDF2 600k) est déjà en place et réutilisé.
+> ⚠️ Compatibilité : `capacitor-native-biometric` v4 est prévu pour Capacitor 5/6 ; ce projet est en Capacitor 8. Vérifie la compatibilité au premier build natif (sinon, utiliser une version alignée du plugin ou `@aparajita/capacitor-biometric-auth` + `@aparajita/capacitor-secure-storage`). **Aucun impact sur la version web.**
 
 ## Publication (nécessite TES comptes)
 - **Google Play** : compte développeur (~25 $ une fois), signer l'**AAB**, fiche Play Store.

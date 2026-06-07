@@ -438,6 +438,8 @@ const ES = {
     'El código MFA es incorrecto. Revisa la hora de tu teléfono e inténtalo de nuevo.',
 
   // VaultGate
+  'Déverrouiller avec la biométrie': 'Desbloquear con biometría',
+  'Activer le déverrouillage par biométrie': 'Activar el desbloqueo por biometría',
   'Espace verrouillé': 'Espacio bloqueado',
   'Créer ton code': 'Crear tu código',
   'Entre ton code pour ouvrir ton coffre-fort.': 'Introduce tu código para abrir tu caja fuerte.',
