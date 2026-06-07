@@ -49,6 +49,30 @@ export function AppProvider({ children }) {
     getMeta('canary').then((c) => setHasVault(!!c))
   }, [])
 
+  // Verrouillage automatique du coffre-fort (ENF-01) : la clé en mémoire est effacée
+  // après 3 min d'inactivité ou dès que l'app passe en arrière-plan. Il faut alors
+  // ressaisir le code. Protège si le téléphone est laissé ouvert ou perdu.
+  useEffect(() => {
+    if (!adoKey) return
+    let timer
+    const reset = () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => setAdoKey(null), 3 * 60 * 1000)
+    }
+    const onVisibility = () => {
+      if (document.hidden) setAdoKey(null)
+    }
+    const events = ['pointerdown', 'keydown', 'touchstart']
+    events.forEach((e) => window.addEventListener(e, reset, { passive: true }))
+    document.addEventListener('visibilitychange', onVisibility)
+    reset()
+    return () => {
+      clearTimeout(timer)
+      events.forEach((e) => window.removeEventListener(e, reset))
+      document.removeEventListener('visibilitychange', onVisibility)
+    }
+  }, [adoKey])
+
   const updateTheme = (v) => {
     setTheme(v)
     savePref('theme', v)
