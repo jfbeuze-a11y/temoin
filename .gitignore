@@ -6,7 +6,14 @@ dev-dist
 .vite-err.log
 .DS_Store
 .claude/
-# Plateformes natives Capacitor (générées via `npx cap add` sur la machine de build)
-/android
+# iOS (build sur Mac uniquement)
 /ios
+# Artefacts de build Android (le projet android/ est versionné, pas ses sorties)
 .gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/captures/
+android/app/src/main/assets/public/

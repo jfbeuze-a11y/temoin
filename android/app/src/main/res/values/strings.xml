@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KORI</string>
+    <string name="title_activity_main">KORI</string>
+    <string name="package_name">fr.sifaris.kori</string>
+    <string name="custom_url_scheme">fr.sifaris.kori</string>
+</resources>
