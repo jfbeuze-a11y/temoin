@@ -371,6 +371,9 @@ const ES = {
   Langue: 'Idioma',
   Accessibilité: 'Accesibilidad',
   'Découverte': 'Descubrir',
+  'Informations': 'Información',
+  'Mentions légales': 'Aviso legal',
+  'Mentions légales & confidentialité': 'Aviso legal y privacidad',
   'Revoir l’intro de KORI': 'Volver a ver la intro de Kori',
   'Témoin vise la conformité RGAA 4.1 / WCAG 2.1 AA : contrastes renforcés, cibles tactiles larges, navigation au lecteur d’écran, respect de la réduction d’animations de ton système.':
     'Témoin busca cumplir RGAA 4.1 / WCAG 2.1 AA: contrastes reforzados, zonas táctiles amplias, navegación con lector de pantalla y respeto de la reducción de animaciones del sistema.',

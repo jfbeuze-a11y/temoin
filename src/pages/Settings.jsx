@@ -108,6 +108,9 @@ export default function Settings() {
         {wiped && <p style={{ color: 'var(--ok)' }}>{t('Données effacées.')}</p>}
       </div>
 
+      <h2>{t('Informations')}</h2>
+      <Link to="/legal" className="btn ghost">{t('Mentions légales & confidentialité')}</Link>
+
       <p className="muted center" style={{ fontSize: '0.8rem', marginTop: 20 }}>
         {t('Témoin, version de travail. Les références (3018, 3020, PHAROS), le cadre légal et les procédures doivent être vérifiés et actualisés au lancement.')}
       </p>

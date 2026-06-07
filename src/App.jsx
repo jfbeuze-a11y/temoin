@@ -9,6 +9,7 @@ import { useApp } from './context/AppContext.jsx'
 import Home from './pages/Home.jsx'
 import Settings from './pages/Settings.jsx'
 import Compte from './pages/Compte.jsx'
+import Legal from './pages/Legal.jsx'
 
 import AdoHome from './pages/ado/AdoHome.jsx'
 import Comprendre from './pages/ado/Comprendre.jsx'
@@ -143,6 +144,7 @@ export default function App() {
             <Route path="/" element={rootElement} />
             <Route path="/reglages" element={<Settings />} />
             <Route path="/compte" element={<Compte />} />
+            <Route path="/legal" element={<Legal />} />
           </Route>
 
           {SPACE !== 'parent' && adoRoutes}
