@@ -6,7 +6,10 @@ Application « Témoin » (KORI). État au fil du développement. Sert de suppor
 
 | Domaine | Mesure | Réf. CDC |
 |---|---|---|
-| Chiffrement au repos | AES-256-GCM, clé PBKDF2 (210 000 it., SHA-256), clé en mémoire seule | ENF-01 |
+| Chiffrement au repos | AES-256-GCM, clé PBKDF2 (**600 000 it.**, SHA-256, versionné), clé en mémoire seule | ENF-01 |
+| Anti-force brute | Délai croissant après chaque essai raté (coffre + connexion) | A07 |
+| En-têtes | **CSP stricte** (script-src 'self'), referrer no-referrer, liens externes en noopener | A05 |
+| Dépendances | `npm audit` : **0 vulnérabilité** (jspdf mis à jour, DOMPurify corrigé) | A06 |
 | Verrouillage | Code 4–6 chiffres ; **verrouillage auto** (3 min d'inactivité + arrière-plan) | ENF-01 |
 | Intégrité preuves | Empreinte SHA-256 par pièce, vérifiée à la lecture | EF-P02 |
 | Local-first | Aucune donnée envoyée à un serveur ; pas de backend | §7.1 |

@@ -24,6 +24,11 @@ function savePref(k, v) {
   }
 }
 
+// Anti-force brute (A07) : délai croissant après chaque échec (session courante).
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+let vaultFails = 0
+let accountFails = 0
+
 export function AppProvider({ children }) {
   const [theme, setTheme] = useState(() => loadPref('theme', 'calm')) // 'calm' (sombre apaisant) | 'light'
   const [lang, setLang] = useState(() => loadPref('lang', 'fr'))
@@ -96,25 +101,30 @@ export function AppProvider({ children }) {
 
   // Crée le coffre-fort : dérive une clé du code, stocke sel + canary chiffré (jamais le code).
   const createVault = useCallback(async (passcode) => {
-    const { key, salt } = await deriveKey(passcode)
+    const { key, salt, iterations } = await deriveKey(passcode)
     const canary = await encryptJSON(key, { ok: true, v: 1 })
     await setMeta('salt', salt)
+    await setMeta('iterations', iterations)
     await setMeta('canary', canary)
     setAdoKey(key)
     setHasVault(true)
     return true
   }, [])
 
-  // Déverrouille : retente la dérivation et vérifie via le canary.
+  // Déverrouille : retente la dérivation et vérifie via le canary (avec anti-force brute).
   const unlockVault = useCallback(async (passcode) => {
     const salt = await getMeta('salt')
     const canary = await getMeta('canary')
     if (!salt || !canary) return false
-    const key = await tryUnlock(passcode, salt, canary)
+    const iterations = (await getMeta('iterations')) || 210000
+    if (vaultFails > 0) await sleep(Math.min(vaultFails * 300, 3000))
+    const key = await tryUnlock(passcode, salt, canary, iterations)
     if (key) {
+      vaultFails = 0
       setAdoKey(key)
       return true
     }
+    vaultFails += 1
     return false
   }, [])
 
@@ -129,10 +139,15 @@ export function AppProvider({ children }) {
   }, [])
 
   const loginAccount = useCallback(async (password, code) => {
+    if (accountFails > 0) await sleep(Math.min(accountFails * 300, 3000))
     const data = await account.unlockAccount(password)
-    if (!data) return false // mot de passe incorrect
+    if (!data) {
+      accountFails += 1
+      return false // mot de passe incorrect
+    }
     const ok = await verifyTOTP(data.totpSecret, code)
-    if (ok) setAccountAuthed(true)
+    if (ok) accountFails = 0
+    else accountFails += 1
     return ok
   }, [])
 

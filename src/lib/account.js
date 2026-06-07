@@ -17,9 +17,9 @@ export function hasAccount() {
 }
 
 export async function createAccount(username, password, totpSecret) {
-  const { key, salt } = await deriveKey(password)
+  const { key, salt, iterations } = await deriveKey(password)
   const enc = await encryptJSON(key, { totpSecret, ok: true })
-  const acc = { username: username || '', salt, enc, createdAt: new Date().toISOString() }
+  const acc = { username: username || '', salt, iterations, enc, createdAt: new Date().toISOString() }
   localStorage.setItem(KEY, JSON.stringify(acc))
   return acc
 }
@@ -29,7 +29,7 @@ export async function unlockAccount(password) {
   const acc = getAccount()
   if (!acc) return null
   try {
-    const { key } = await deriveKey(password, acc.salt)
+    const { key } = await deriveKey(password, acc.salt, acc.iterations || 210000)
     return await decryptJSON(key, acc.enc)
   } catch {
     return null

@@ -11,6 +11,19 @@ export default defineConfig({
   // Injecté de façon déterministe (lu côté Node, pas via import.meta.env).
   define: { __SPACE__: JSON.stringify(process.env.VITE_SPACE || '') },
   plugins: [
+    // CSP injectée uniquement au build de production (le dev a besoin de scripts inline/eval pour le HMR).
+    {
+      name: 'inject-csp',
+      apply: 'build',
+      transformIndexHtml(html) {
+        const csp =
+          "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+        return html.replace(
+          '</head>',
+          `  <meta http-equiv="Content-Security-Policy" content="${csp}">\n  </head>`
+        )
+      }
+    },
     react(),
     VitePWA({
       registerType: 'autoUpdate',

@@ -33,19 +33,22 @@ export async function sha256(data) {
 }
 
 // --- Dérivation de clé à partir du code/PIN (PBKDF2) ------------------------
-const PBKDF2_ITERATIONS = 210000 // recommandation OWASP pour SHA-256
+// 600 000 itérations : recommandation OWASP 2023 pour PBKDF2-HMAC-SHA256.
+// Le nombre d'itérations est versionné (stocké avec le sel) pour compat ascendante.
+export const DEFAULT_ITERATIONS = 600000
+const LEGACY_ITERATIONS = 210000 // anciens coffres sans champ « iterations »
 
-export async function deriveKey(passcode, saltB64) {
+export async function deriveKey(passcode, saltB64, iterations = DEFAULT_ITERATIONS) {
   const salt = saltB64 ? new Uint8Array(base64ToBuf(saltB64)) : crypto.getRandomValues(new Uint8Array(16))
   const baseKey = await crypto.subtle.importKey('raw', enc.encode(passcode), 'PBKDF2', false, ['deriveKey'])
   const key = await crypto.subtle.deriveKey(
-    { name: 'PBKDF2', salt, iterations: PBKDF2_ITERATIONS, hash: 'SHA-256' },
+    { name: 'PBKDF2', salt, iterations, hash: 'SHA-256' },
     baseKey,
     { name: 'AES-GCM', length: 256 },
     false,
     ['encrypt', 'decrypt']
   )
-  return { key, salt: bufToBase64(salt) }
+  return { key, salt: bufToBase64(salt), iterations }
 }
 
 // --- Chiffrement / déchiffrement AES-256-GCM -------------------------------
@@ -64,9 +67,9 @@ export async function decryptJSON(key, payload) {
 }
 
 // Vérifie un code en tentant de déchiffrer un témoin (canary) stocké au déverrouillage.
-export async function tryUnlock(passcode, saltB64, canary) {
+export async function tryUnlock(passcode, saltB64, canary, iterations = LEGACY_ITERATIONS) {
   try {
-    const { key } = await deriveKey(passcode, saltB64)
+    const { key } = await deriveKey(passcode, saltB64, iterations)
     await decryptJSON(key, canary)
     return key
   } catch {
