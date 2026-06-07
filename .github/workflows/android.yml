@@ -10,6 +10,9 @@ on:
       - 'capacitor.config.json'
       - '.github/workflows/android.yml'
 
+permissions:
+  contents: write
+
 jobs:
   apk:
     runs-on: ubuntu-latest
@@ -31,8 +34,19 @@ jobs:
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon --stacktrace
+      - name: Renommer l'APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk KORI.apk
       - uses: actions/upload-artifact@v4
         with:
           name: kori-android-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: KORI.apk
           if-no-files-found: error
+      - name: Publier dans une Release (lien direct .apk)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: android-latest
+          name: KORI — App Android (version de test)
+          body: |
+            APK de test (debug) à installer sur ton téléphone.
+            Téléchargement direct ci-dessous → KORI.apk
+          files: KORI.apk
