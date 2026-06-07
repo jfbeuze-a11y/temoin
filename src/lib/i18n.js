@@ -424,6 +424,10 @@ const ES = {
   'Scanne ce QR code avec ton application d’authentification (Google Authenticator, Authy…), ou saisis la clé à la main.':
     'Escanea este código QR con tu app de autenticación (Google Authenticator, Authy…), o introduce la clave a mano.',
   'Saisis le code à 6 chiffres pour confirmer': 'Introduce el código de 6 cifras para confirmar',
+  'Tu n’as qu’un seul téléphone ? Pas besoin de scanner :': '¿Solo tienes un teléfono? No hace falta escanear:',
+  'Ouvrir dans mon app d’authentification': 'Abrir en mi app de autenticación',
+  'Copier la clé': 'Copiar la clave',
+  'Clé copiée ✓': 'Clave copiada ✓',
   'Activer mon compte sécurisé': 'Activar mi cuenta segura',
   'Le mot de passe ne peut pas être récupéré s’il est perdu : note-le en lieu sûr.':
     'La contraseña no se puede recuperar si se pierde: anótala en un lugar seguro.',

@@ -42,6 +42,7 @@ export default function AccountGate({ children }) {
           <label htmlFor="otp">{t('Code à 6 chiffres (MFA)')}</label>
           <input
             id="otp"
+            type="text"
             className="pin"
             inputMode="numeric"
             pattern="[0-9]*"

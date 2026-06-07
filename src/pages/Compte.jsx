@@ -20,6 +20,17 @@ export default function Compte() {
   const [code, setCode] = useState('')
   const [err, setErr] = useState('')
   const [busy, setBusy] = useState(false)
+  const [keyCopied, setKeyCopied] = useState(false)
+
+  async function copyKey() {
+    try {
+      await navigator.clipboard.writeText(secret)
+      setKeyCopied(true)
+      setTimeout(() => setKeyCopied(false), 1500)
+    } catch {
+      /* presse-papiers indisponible */
+    }
+  }
 
   useEffect(() => {
     QRCode.toDataURL(otpauthURI(secret, username || 'Témoin'), { margin: 1, width: 220 }).then(setQr).catch(() => {})
@@ -89,9 +100,17 @@ export default function Compte() {
           </div>
         )}
         <p className="center" style={{ wordBreak: 'break-all', fontFamily: 'monospace', fontSize: '0.85rem' }}>{secret}</p>
+
+        <p className="faint" style={{ fontSize: '0.85rem' }}>{t('Tu n’as qu’un seul téléphone ? Pas besoin de scanner :')}</p>
+        <a className="btn primary" href={otpauthURI(secret, username || 'KORI')}>{t('Ouvrir dans mon app d’authentification')}</a>
+        <button type="button" className="btn ghost" style={{ marginTop: 8 }} onClick={copyKey}>
+          {keyCopied ? t('Clé copiée ✓') : t('Copier la clé')}
+        </button>
+
         <label htmlFor="code">{t('Saisis le code à 6 chiffres pour confirmer')}</label>
         <input
           id="code"
+          type="text"
           className="pin"
           inputMode="numeric"
           pattern="[0-9]*"
