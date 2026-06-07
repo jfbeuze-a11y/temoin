@@ -99,13 +99,6 @@ export default function Settings() {
         </>
       )}
 
-      <h2>{t('Accessibilité')}</h2>
-      <div className="card">
-        <p className="muted">
-          {t('Témoin vise la conformité RGAA 4.1 / WCAG 2.1 AA : contrastes renforcés, cibles tactiles larges, navigation au lecteur d’écran, respect de la réduction d’animations de ton système.')}
-        </p>
-      </div>
-
       <h2>{t('Mes données')}</h2>
       <div className="card">
         <p className="muted">
