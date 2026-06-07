@@ -1,0 +1,12 @@
+{
+  "appId": "fr.sifaris.kori",
+  "appName": "KORI",
+  "webDir": "dist",
+  "backgroundColor": "#14171a",
+  "android": {
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

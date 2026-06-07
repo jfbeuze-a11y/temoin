@@ -6,3 +6,7 @@ dev-dist
 .vite-err.log
 .DS_Store
 .claude/
+# Plateformes natives Capacitor (générées via `npx cap add` sur la machine de build)
+/android
+/ios
+.gradle
