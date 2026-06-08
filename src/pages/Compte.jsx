@@ -33,7 +33,7 @@ export default function Compte() {
   }
 
   useEffect(() => {
-    QRCode.toDataURL(otpauthURI(secret, username || 'Témoin'), { margin: 1, width: 220 }).then(setQr).catch(() => {})
+    QRCode.toDataURL(otpauthURI(secret, username || 'KORI'), { margin: 1, width: 220 }).then(setQr).catch(() => {})
   }, [secret, username])
 
   const issues = passwordIssues(pwd)

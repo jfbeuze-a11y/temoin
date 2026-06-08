@@ -1,6 +1,6 @@
 // Multilingue (EF-X04) — FR par défaut, ES sélectionnable.
 // Dictionnaire FR -> ES pour le « chrome » d'interface. Les contenus longs sont gérés
-// par les getters bilingues des fichiers data/. Le mot « Témoin » (marque) n'est jamais traduit.
+// par les getters bilingues des fichiers data/. La marque « KORI » et le nom du module « Témoin » ne sont jamais traduits.
 import { useApp } from '../context/AppContext.jsx'
 
 export const langs = [
@@ -72,8 +72,8 @@ const ES = {
   // Accueil
   'Compagnon de protection': 'Compañero de protección',
   'Face au cyberharcèlement, on est là pour toi.': 'Frente al ciberacoso, estamos contigo.',
-  'Témoin t’aide à comprendre la situation, à mettre tes preuves à l’abri et à trouver de l’aide. Sans compte. Rien ne quitte ton téléphone.':
-    'Témoin te ayuda a entender la situación, a poner tus pruebas a salvo y a encontrar ayuda. Sin cuenta. Nada sale de tu teléfono.',
+  'KORI t’aide à comprendre la situation, à mettre tes preuves à l’abri et à trouver de l’aide. Sans compte. Rien ne quitte ton téléphone.':
+    'KORI te ayuda a entender la situación, a poner tus pruebas a salvo y a encontrar ayuda. Sin cuenta. Nada sale de tu teléfono.',
   'J’ouvre…': 'Abro…',
   'L’espace ado': 'Espacio joven',
   'Comprendre, me protéger, être accompagné, témoigner.': 'Entender, protegerme, recibir apoyo, ser testigo.',
@@ -300,8 +300,8 @@ const ES = {
   'Vers qui se tourner': 'A quién acudir',
   'Des associations et lignes d’écoute, gratuites et confidentielles.':
     'Asociaciones y líneas de escucha, gratuitas y confidenciales.',
-  'Témoin ne récupère jamais ta position. Cette liste est nationale.':
-    'Témoin nunca recoge tu ubicación. Esta lista es nacional.',
+  'KORI ne récupère jamais ta position. Cette liste est nationale.':
+    'KORI nunca recoge tu ubicación. Esta lista es nacional.',
 
   // Journal
   'Mon journal': 'Mi diario',
@@ -323,8 +323,8 @@ const ES = {
   'Accompagner sans surveiller': 'Acompañar sin vigilar',
   'Cadre légal et recours': 'Marco legal y recursos',
   'Espace totalement séparé.': 'Espacio totalmente separado.',
-  'Témoin ne vous donne aucun accès à l’espace de votre enfant. C’est une garantie d’architecture : la confiance protège mieux que le contrôle.':
-    'Témoin no le da ningún acceso al espacio de su hijo. Es una garantía de arquitectura: la confianza protege mejor que el control.',
+  'KORI ne vous donne aucun accès à l’espace de votre enfant. C’est une garantie d’architecture : la confiance protège mieux que le contrôle.':
+    'KORI no le da ningún acceso al espacio de su hijo. Es una garantía de arquitectura: la confianza protege mejor que el control.',
   'Repérer sans tomber dans la paranoïa.': 'Detectar sin caer en la paranoia.',
   'Ce qu’il faut faire, et surtout éviter.': 'Qué hacer y, sobre todo, qué evitar.',
   'Loi, établissement, plainte.': 'Ley, centro escolar, denuncia.',
@@ -375,8 +375,8 @@ const ES = {
   'Mentions légales': 'Aviso legal',
   'Mentions légales & confidentialité': 'Aviso legal y privacidad',
   'Revoir l’intro de KORI': 'Volver a ver la intro de Kori',
-  'Témoin vise la conformité RGAA 4.1 / WCAG 2.1 AA : contrastes renforcés, cibles tactiles larges, navigation au lecteur d’écran, respect de la réduction d’animations de ton système.':
-    'Témoin busca cumplir RGAA 4.1 / WCAG 2.1 AA: contrastes reforzados, zonas táctiles amplias, navegación con lector de pantalla y respeto de la reducción de animaciones del sistema.',
+  'KORI vise la conformité RGAA 4.1 / WCAG 2.1 AA : contrastes renforcés, cibles tactiles larges, navigation au lecteur d’écran, respect de la réduction d’animations de ton système.':
+    'KORI busca cumplir RGAA 4.1 / WCAG 2.1 AA: contrastes reforzados, zonas táctiles amplias, navegación con lector de pantalla y respeto de la reducción de animaciones del sistema.',
   'Mes données': 'Mis datos',
   'Tes preuves et ton journal sont chiffrés sur cet appareil uniquement. Tu peux tout effacer d’un geste.':
     'Tus pruebas y tu diario están cifrados solo en este dispositivo. Puedes borrarlo todo de un gesto.',
@@ -384,8 +384,8 @@ const ES = {
   'Données effacées.': 'Datos borrados.',
   'Effacer définitivement TOUTES les données de l’espace ado (preuves, journal, code) ? Cette action est irréversible.':
     '¿Borrar definitivamente TODOS los datos del espacio joven (pruebas, diario, código)? Esta acción es irreversible.',
-  'Témoin, version de travail. Les références (3018, 3020, PHAROS), le cadre légal et les procédures doivent être vérifiés et actualisés au lancement.':
-    'Témoin, versión de trabajo. Las referencias (3018, 3020, PHAROS), el marco legal y los procedimientos deben verificarse y actualizarse en el lanzamiento.',
+  'KORI, version de travail. Les références (3018, 3020, PHAROS), le cadre légal et les procédures doivent être vérifiés et actualisés au lancement.':
+    'KORI, versión de trabajo. Las referencias (3018, 3020, PHAROS), el marco legal y los procedimientos deben verificarse y actualizarse en el lanzamiento.',
 
   // Compte & MFA
   'Compte & sécurité': 'Cuenta y seguridad',

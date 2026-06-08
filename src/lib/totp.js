@@ -55,6 +55,6 @@ export async function verifyTOTP(secret, code, window = 1) {
 }
 
 // URI otpauth:// pour le QR code de configuration.
-export function otpauthURI(secret, label = 'Témoin', issuer = 'Témoin') {
+export function otpauthURI(secret, label = 'KORI', issuer = 'KORI') {
   return `otpauth://totp/${encodeURIComponent(issuer)}:${encodeURIComponent(label)}?secret=${secret}&issuer=${encodeURIComponent(issuer)}&algorithm=SHA1&digits=6&period=30`
 }

@@ -13,7 +13,7 @@ const TPL = {
     ligne: (i, date, quoi, suffixe, note) => `${i}. Le ${date}, j’ai conservé ${quoi}${suffixe}.${note ? ' ' + note : ''}`,
     entete: 'Voici les faits que j’ai documentés :',
     vide: 'Je n’ai pas encore ajouté de preuve dans mon coffre-fort.',
-    pied: 'Chaque élément est horodaté et scellé par une empreinte dans l’application Témoin.'
+    pied: 'Chaque élément est horodaté et scellé par une empreinte dans l’application KORI.'
   },
   es: {
     quoi: { image: 'una captura de pantalla', text: 'un mensaje', link: 'un enlace' },
@@ -21,7 +21,7 @@ const TPL = {
     ligne: (i, date, quoi, suffixe, note) => `${i}. El ${date} guardé ${quoi}${suffixe}.${note ? ' ' + note : ''}`,
     entete: 'Estos son los hechos que he documentado:',
     vide: 'Todavía no he añadido ninguna prueba a mi caja fuerte.',
-    pied: 'Cada elemento lleva fecha y un sello en la aplicación Témoin.'
+    pied: 'Cada elemento lleva fecha y un sello en la aplicación KORI.'
   }
 }
 

@@ -14,7 +14,7 @@ export default function ParentHome() {
         <strong className="h-row"><Icon name="lock" size={18} /> {t('Espace totalement séparé.')}</strong>
         <p style={{ color: 'var(--ink)', margin: '6px 0 0' }}>
           {t(
-            'Témoin ne vous donne aucun accès à l’espace de votre enfant. C’est une garantie d’architecture : la confiance protège mieux que le contrôle.'
+            'KORI ne vous donne aucun accès à l’espace de votre enfant. C’est une garantie d’architecture : la confiance protège mieux que le contrôle.'
           )}
         </p>
       </div>

@@ -8,7 +8,7 @@ export default function Home() {
   const t = useT()
   return (
     <>
-      <Header title="Témoin" />
+      <Header title="KORI" />
 
       <div style={{ paddingTop: 14 }}>
         <p className="eyebrow">{t('Salut, moi c’est Kori')}</p>

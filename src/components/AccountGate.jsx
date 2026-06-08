@@ -27,7 +27,7 @@ export default function AccountGate({ children }) {
   return (
     <div className="app">
       <header className="header">
-        <span className="brand"><BrandMark /> Témoin</span>
+        <span className="brand"><BrandMark /> KORI</span>
         <span className="spacer" />
         <LangButton />
         <PanicButton />

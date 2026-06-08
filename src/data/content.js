@@ -42,7 +42,7 @@ const fr = {
     ]
   },
   parent: {
-    etancheite: 'Cet espace est totalement séparé de celui de votre enfant. Témoin ne vous donne AUCUN accès à ses données, son autodiagnostic, son coffre-fort ou son journal. C’est une garantie d’architecture, pas seulement une promesse. Un outil de surveillance serait contourné, puis fui. La confiance protège mieux que le contrôle.',
+    etancheite: 'Cet espace est totalement séparé de celui de votre enfant. KORI ne vous donne AUCUN accès à ses données, son autodiagnostic, son coffre-fort ou son journal. C’est une garantie d’architecture, pas seulement une promesse. Un outil de surveillance serait contourné, puis fui. La confiance protège mieux que le contrôle.',
     signaux: {
       intro: 'Aucun signe ne « prouve » à lui seul un harcèlement. C’est un faisceau, un changement par rapport à d’habitude qui doit alerter, sans verser dans la paranoïa.',
       items: [
@@ -193,7 +193,7 @@ const es = {
     ]
   },
   parent: {
-    etancheite: 'Este espacio está totalmente separado del de su hijo o hija. Témoin no le da NINGÚN acceso a sus datos, su autodiagnóstico, su caja fuerte ni su diario. Es una garantía de arquitectura, no solo una promesa. Una herramienta de vigilancia se esquiva y luego se abandona. La confianza protege mejor que el control.',
+    etancheite: 'Este espacio está totalmente separado del de su hijo o hija. KORI no le da NINGÚN acceso a sus datos, su autodiagnóstico, su caja fuerte ni su diario. Es una garantía de arquitectura, no solo una promesa. Una herramienta de vigilancia se esquiva y luego se abandona. La confianza protege mejor que el control.',
     signaux: {
       intro: 'Ninguna señal «prueba» por sí sola el acoso. Es un conjunto, un cambio respecto a lo habitual lo que debe alertar, sin caer en la paranoia.',
       items: [

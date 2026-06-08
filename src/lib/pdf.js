@@ -33,7 +33,7 @@ export async function exportDossier(evidence, meta = {}) {
 
   // En-tête
   line('Dossier de preuves', 20, 'bold')
-  line('Constitué avec l’application Témoin, à des fins de signalement ou de plainte.', 9, 'italic', [90, 100, 110])
+  line('Constitué avec l’application KORI, à des fins de signalement ou de plainte.', 9, 'italic', [90, 100, 110])
   y += 2
   line('Généré le : ' + fmtDate(new Date().toISOString()), 10)
   if (meta.context) line('Contexte : ' + meta.context, 10)
@@ -97,7 +97,7 @@ export async function exportDossier(evidence, meta = {}) {
     doc.setPage(i)
     doc.setFontSize(8)
     doc.setTextColor(150)
-    doc.text(`Témoin, dossier de preuves, page ${i}/${pages}`, M, 290)
+    doc.text(`KORI, dossier de preuves, page ${i}/${pages}`, M, 290)
   }
 
   doc.save('dossier-de-preuves.pdf')

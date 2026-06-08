@@ -22,7 +22,7 @@ export default function Ressources() {
         </div>
       ))}
       <p className="muted" style={{ fontSize: '0.8rem' }}>
-        {t('Témoin ne récupère jamais ta position. Cette liste est nationale.')}
+        {t('KORI ne récupère jamais ta position. Cette liste est nationale.')}
       </p>
     </>
   )

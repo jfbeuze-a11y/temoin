@@ -2,13 +2,13 @@
 // ⚠ Document de travail : à compléter (contact, DPO) et à valider par un avocat.
 
 const fr = {
-  intro: 'Témoin (compagnon KORI) est pensée selon le principe « vie privée dès la conception ». Tes données restent sur ton appareil.',
+  intro: 'KORI est pensée selon le principe « vie privée dès la conception ». Tes données restent sur ton appareil.',
   maj: 'Dernière mise à jour : à compléter au lancement.',
   sections: [
     {
       titre: 'Éditeur',
       paras: [
-        'Application « Témoin » (compagnon KORI), éditée par SIFARIS.',
+        'Application « KORI », éditée par SIFARIS.',
         'Responsable de traitement : SIFARIS. Contact : [à compléter].',
         'Délégué à la protection des données (DPO) : [à compléter].'
       ]
@@ -72,13 +72,13 @@ const fr = {
 }
 
 const es = {
-  intro: 'Témoin (compañero KORI) está diseñada según el principio de «privacidad desde el diseño». Tus datos se quedan en tu dispositivo.',
+  intro: 'KORI está diseñada según el principio de «privacidad desde el diseño». Tus datos se quedan en tu dispositivo.',
   maj: 'Última actualización: por completar en el lanzamiento.',
   sections: [
     {
       titre: 'Editor',
       paras: [
-        'Aplicación «Témoin» (compañero KORI), editada por SIFARIS.',
+        'Aplicación «KORI», editada por SIFARIS.',
         'Responsable del tratamiento: SIFARIS. Contacto: [por completar].',
         'Delegado de Protección de Datos (DPO): [por completar].'
       ]
