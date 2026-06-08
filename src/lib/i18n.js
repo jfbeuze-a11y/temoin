@@ -13,6 +13,7 @@ const ES = {
   Retour: 'Volver',
   Quitter: 'Salir',
   Accueil: 'Inicio',
+  'Afficher la navigation': 'Mostrar la navegación',
   'Changer de langue': 'Cambiar de idioma',
   Preuves: 'Pruebas',
   Soutien: 'Apoyo',

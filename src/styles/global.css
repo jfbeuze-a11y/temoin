@@ -546,7 +546,7 @@ strong {
   position: fixed;
   bottom: 16px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(0);
   width: calc(100% - 28px);
   max-width: 500px;
   display: flex;
@@ -560,6 +560,47 @@ strong {
   border-radius: 26px;
   box-shadow: var(--shadow-lg);
   z-index: 50;
+  transition: transform 0.32s var(--ease), opacity 0.32s var(--ease);
+}
+/* État masqué : glisse sous l'écran et devient non cliquable */
+.tabbar.is-hidden {
+  transform: translateX(-50%) translateY(calc(100% + 24px));
+  opacity: 0;
+  pointer-events: none;
+}
+/* Poignée discrète en bas : visible seulement quand la barre est masquée, pour la rappeler */
+.tabbar-handle {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 49;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s var(--ease);
+}
+.tabbar-handle.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.tabbar-handle span {
+  width: 44px;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink-faint) 55%, transparent);
+  box-shadow: var(--shadow-lg);
+}
+.tabbar-handle:active span {
+  background: var(--ink-faint);
 }
 .tabbar a {
   flex: 1;

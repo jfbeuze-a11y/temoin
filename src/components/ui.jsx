@@ -163,9 +163,37 @@ export function LinkCard({ to, title, desc, icon, priority, featured = false, ac
   )
 }
 
+// Masquage auto de la barre : se cache quand on descend, réapparaît quand on remonte,
+// quand on est en haut/bas de page, ou quand on touche la poignée du bas.
+function useAutoHide() {
+  const [hidden, setHidden] = useState(false)
+  const lastY = useRef(0)
+  useEffect(() => {
+    lastY.current = window.scrollY || 0
+    function onScroll() {
+      const y = window.scrollY || 0
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      const delta = y - lastY.current
+      // Toujours visible près du haut ou du bas de la page.
+      if (y < 60 || y >= max - 60) {
+        setHidden(false)
+      } else if (delta > 6) {
+        setHidden(true) // on descend -> on cache
+      } else if (delta < -6) {
+        setHidden(false) // on remonte -> on montre
+      }
+      lastY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  return [hidden, setHidden]
+}
+
 // Barre d'onglets de l'espace ado (4 domaines + accueil).
 export function TabBar() {
   const t = useT()
+  const [hidden, setHidden] = useAutoHide()
   const tabs = [
     { to: '/ado', ico: 'home', label: 'Accueil', end: true },
     { to: '/ado/comprendre', ico: 'lightbulb', label: 'Comprendre' },
@@ -174,22 +202,39 @@ export function TabBar() {
     { to: '/ado/temoin', ico: 'eye', label: 'Témoin' }
   ]
   return (
-    <nav className="tabbar" aria-label="Navigation principale">
-      {tabs.map((tab) => (
-        <NavLink
-          key={tab.to}
-          to={tab.to}
-          end={tab.end}
-          className={({ isActive }) => (isActive ? 'active' : '') + (tab.center ? ' center' : '')}
-          aria-label={tab.center ? 'Coffre-fort de preuves (accès rapide)' : undefined}
-        >
-          <span className="ico" aria-hidden="true">
-            <Icon name={tab.ico} size={tab.center ? 26 : 22} />
-          </span>
-          <span>{tab.label === 'Témoin' ? 'Témoin' : t(tab.label)}</span>
-        </NavLink>
-      ))}
-    </nav>
+    <>
+      <button
+        type="button"
+        className={'tabbar-handle' + (hidden ? ' show' : '')}
+        onClick={() => setHidden(false)}
+        aria-label={t('Afficher la navigation')}
+        tabIndex={hidden ? 0 : -1}
+      >
+        <span aria-hidden="true" />
+      </button>
+      <nav
+        className={'tabbar' + (hidden ? ' is-hidden' : '')}
+        aria-label="Navigation principale"
+        aria-hidden={hidden}
+      >
+        {tabs.map((tab) => (
+          <NavLink
+            key={tab.to}
+            to={tab.to}
+            end={tab.end}
+            tabIndex={hidden ? -1 : 0}
+            onClick={() => setHidden(false)}
+            className={({ isActive }) => (isActive ? 'active' : '') + (tab.center ? ' center' : '')}
+            aria-label={tab.center ? 'Coffre-fort de preuves (accès rapide)' : undefined}
+          >
+            <span className="ico" aria-hidden="true">
+              <Icon name={tab.ico} size={tab.center ? 26 : 22} />
+            </span>
+            <span>{tab.label === 'Témoin' ? 'Témoin' : t(tab.label)}</span>
+          </NavLink>
+        ))}
+      </nav>
+    </>
   )
 }
 
